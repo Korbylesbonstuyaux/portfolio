@@ -1,0 +1,152 @@
+body {
+  margin: auto;
+  text-align: center;
+}
+
+/* NAV */
+
+nav {
+  /*border: 1px solid yellow !important;*/
+  border: none !important;
+  background: transparent !important;
+  height: 50px;
+}
+
+
+#go-menu {
+  height: 50px;
+  width: 50px;
+  line-height: 50px !important;
+  padding: 0 !important;
+  position: relative;
+  background: none !important;
+  margin-right: 10px;
+}
+
+#go-menu:focus, #go-menu:active {
+  outline: none !important;
+  background: none !important;
+  box-shadow: none;
+}
+
+#go-menu div {
+  line-height: normal;
+  position: absolute;
+  top: -20px;
+  left: -5px;
+}
+
+#go-menu span {
+  line-height: normal;
+  display: block !important;
+  font-size: 3em;
+  height: 10px;
+  margin: auto;
+  margin-bottom: 5px;
+  color: #FFBD2B;
+}
+
+/* MENU */
+
+#menu {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  /*background-color: red;*/
+  position: fixed;
+  top: 50px;
+}
+
+.hide-ele {
+  display: none;
+}
+
+.show-ele {
+  display: block;
+}
+
+#menu .bloc-menu {
+  width: calc(100% / 3);
+  height: calc(100% / 2);
+  /*background-color: yellow;*/
+  display: inline-block;
+}
+
+#menu .bloc-menu:hover {
+  background-color: blue;
+}
+
+@media (max-width: 600px) {
+  #menu .bloc-menu {
+    width: calc(100% / 2);
+    height: calc(100% / 3);
+  }
+}
+
+/* HOME */
+
+#home {
+  height: 600px;
+  background: url("../images/backgrounds/home2.jpg") no-repeat center 0;
+  background-size: cover;
+  line-height: 600px;
+  position: relative;
+}
+
+#title-home  {
+  line-height: normal;
+  display: inline-block;
+  color: #FFBD2B;
+}
+
+/* ABOUT */
+
+#about {
+  background-color: white;
+  position: relative;
+}
+
+#about h1 {
+  color: #0CAEE8;
+}
+
+#about .bloc-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+}
+
+#picture-about {
+  width: 256px;
+  margin: auto;
+  position: relative;
+}
+
+#frame-about {
+  width: 256px;
+  height: auto;
+}
+
+#photo-about {
+  width: 211px;
+  height: auto;
+  /*border: 3px solid #0CAEE8;*/
+  /*border-radius: 50%;*/
+  line-height: normal;
+  position: absolute;
+  top: 76px;
+  left: calc(100% - 233px);
+}
+
+#about p {
+  font-size: 1.4em;
+  color: #7C8081;
+  text-align: left;
+}
+
+/* SKILL */
+
+#skill {
+  height: 600px;
+  background-color: #0D7FFF;
+}

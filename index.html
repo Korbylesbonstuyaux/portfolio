@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio de Pierre-Anthony Dross">
+    <meta name="author" content="Pierre-Anthony Dross">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar">
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <button id="go-menu" type="button" class="btn btn-lg pull-right">
+          <div>
+            <span class="glyphicon glyphicon-minus"></span>
+            <span class="glyphicon glyphicon-minus"></span>
+            <span class="glyphicon glyphicon-minus"></span>
+          </div>
+        </button>
+      </nav>
+    </header>
+
+    <div id="home">
+      <div class="container">
+          <h1 id="title-home">Porfolio de Pierre-Anthony Dross</h1>
+      </div>
+    </div>
+
+    <div id="about">
+      <div class="container">
+        <h1>Qui suis-je ?</h1>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="bloc-about">
+              <div id="picture-about" class="">
+                <img id="frame-about" src="images/icons/ipad.png" alt="Ipad">
+                <img id="photo-about" src="images/photos/me_white.jpg" alt="Moi" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="bloc-about">
+              <p>
+                Actuellement en formation intensive en tant que développeur web pendant 7 mois à UP TO by Simplon (90% de pratique sur des projets personnels ou d'entreprises).<br>
+                Le but est de m'améliorer dans ce domaine en obtenant des compétences de développement aussi bien du côté "front-end" (HTML, CSS, Javascript, ...) que le côté le "back-end" (PHP, Ruby, Python, ...).<br>
+                L'apprentissage de frameworks tels que Symphony ou Ruby on Rails, l'utilisation des méthodes agiles ainsi que la gestion des projets me permettront d'être mieux armés afin de répondre aux besoins des entreprises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="skill">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div id="menu" class="hide-ele">
+      <div id="go-home" class="bloc-menu">
+        <p>
+          Go Home
+        </p>
+      </div><!--
+   --><div id="go-about" class="bloc-menu">
+        <p>
+          Go About
+        </p>
+      </div><!--
+   --><div id="go-skill" class="bloc-menu">
+        <p>
+          Go Skill
+        </p>
+      </div><!--
+   --><div id="go-project" class="bloc-menu">
+        <p>
+          Go Project
+        </p>
+      </div><!--
+   --><div id="go-experience" class="bloc-menu">
+        <p>
+          Go Experience
+        </p>
+      </div><!--
+   --><div id="go-contact" class="bloc-menu">
+        <p>
+          Go Contact
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/jquery-2.2.1.min.js"></script>
+  <script type="text/javascript">
+    $("#go-menu").click(function()
+    {
+      toogleMenu();
+    });
+
+    function toogleMenu()
+    {
+      if($("#menu").css("display") == "none")
+      {
+        $("#menu").removeClass("hide-ele");
+        $("#menu").addClass("show-ele");
+      }
+      else {
+              $("#menu").removeClass("show-ele");
+              $("#menu").addClass("hide-ele");
+           }
+    }
+
+    // 315 height
+  </script>
+</html>
