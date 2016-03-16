@@ -154,7 +154,7 @@ nav {
 /* SKILL */
 
 #skill {
-  min-height: 600px;
+  min-height: 300px;
   background-color: #14BCC7;
 }
 
@@ -163,11 +163,76 @@ nav {
   text-transform: uppercase;
 }
 
-.prec {
-  top: 75px;
-  position: relative;
-  font-size: 10px;
+.btn-skill {
+  margin-bottom: 20px;
 }
+
+#skill button {
+  width:100px;
+  height: 50px;
+  border: none;
+  background-color: #164C6E;
+  color: white;
+  margin-top: 20px;
+}
+
+#skill button.selected {
+  background-color: #FFBD2B;
+}
+
+#skill button:hover {
+  background-color: #FFBD2B;
+}
+
+#skill .group-btn {
+  display: inline-block;
+}
+
+/* MEDIA QUERIES SKILL BUTTONS */
+
+@media (max-width: 550px)
+{
+  #all-skill {
+    display: block;
+    margin: auto;
+  }
+}
+
+@media (max-width: 440px)
+{
+  #skill .group-btn {
+    display: block;
+  }
+}
+
+
+.active-border{
+  position: relative;
+  text-align: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 100%;
+
+  background-color: #FFBD2B;
+  background-image:
+      linear-gradient(91deg, transparent 50%, #A2ECFB 50%),
+      linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
+
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/*
+25% = 90°
+50% = 180°
+75% = 270°
+
+ATTENTION : La couleur change
+if (deg <= 180)
+  'background-image','linear-gradient(' + (90+i) + 'deg, transparent 50%, #A2ECFB 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)'
+else (deg > 180)
+  'background-image','linear-gradient(' + (i-90) + 'deg, transparent 50%, #FFBD2B 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)'
+*/
 
 .circle {
   position: relative;
@@ -188,19 +253,10 @@ nav {
   left: 20px;
 }
 
-.active-border{
+.prec {
+  top: 75px;
   position: relative;
-  text-align: center;
-  width: 110px;
-  height: 110px;
-  border-radius: 100%;
-
-  background-color: #FFBD2B;
-  background-image:
-      linear-gradient(91deg, transparent 50%, #FFBD2B 50%),
-      linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
-
-  display: inline-block;
+  font-size: 10px;
 }
 
 /* LANGUAGE */
@@ -213,16 +269,16 @@ nav {
 }
 
 /* 50% */
-#c-sharp-skill, #sql-skill, #js-skill, #html-skill, #css-skill {
+#c-sharp-skill, #sql-skill, #js-skill, #html-skill, #css-skill, #php-skill {
   background-image:
-      linear-gradient(91deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(270deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
 /* 25% */
 #ada-skill, #python-skill, #ruby-skill {
   background-image:
-      linear-gradient(180deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(180deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%) !important;
 }
 
@@ -238,7 +294,7 @@ nav {
 /* 50% */
 #pattern-skill, #uml-skill, #merise-skill, #git-skill {
   background-image:
-      linear-gradient(91deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(270deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
@@ -247,29 +303,29 @@ nav {
 /* 50% */
 #boostrap-skill {
   background-image:
-      linear-gradient(180deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(270deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
 /* 25% */
 #symfony-skill, #angularjs-skill {
   background-image:
-      linear-gradient(91deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(180deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
 /* SOFTWARE */
 
 /* 50% */
-#eclispe-skill, #xcode-skill {
+#eclipse-skill, #xcode-skill, #unity-skill {
   background-image:
-      linear-gradient(180deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(270deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
 /* 25% */
-#visual-skill, #sublime-skill, #atom-skill, #photoshop-skill, #office-skill, #open-skill {
+#visual-skill, #sublime-skill, #atom-skill, #photoshop-skill, #gimp-skill, #office-skill, #open-skill {
   background-image:
-      linear-gradient(91deg, transparent 50%, #FFBD2B 50%),
+      linear-gradient(180deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
