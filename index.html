@@ -75,7 +75,7 @@
             <div id="java-skill" class="active-border language">
               <div id="circle" class="circle">
                   <img src="images/icons/java_128.png" alt="Icone Java" />
-                  <span class="prec 270" id="prec">75%</span>
+                  <span class="prec c270" id="prec">75%</span>
               </div>
             </div>
             <div id="cpp-skill" class="active-border language">
@@ -339,27 +339,81 @@
         // Change selected button
         $("#skill button.selected").removeClass("selected");
         $(this).addClass("selected");
+
+        resetSkills();
+        setTimeout(toogleCircle, 500);
       }
     });
 
     var started = false;
+    var skills_ready = false;
+    var skills = {};
 
-    var skills = {
-      java: {
-        time: 0,
-        interv: null
-      },
-      cpp: {
-        time: 0,
-        interv: null
-      },
-      c: {
-        time: 0,
-        interv: null
+    // Init skills to object
+    function initSkills()
+    {
+      $("#skill .active-border").each(function(index, element) {
+        // Create skill
+        var new_skill = {};
+        new_skill["time"] = 0;
+        new_skill["interv"] = null;
+
+        // Add skill to object
+        var name = this.id.split("-skill")[0];
+        skills[name] = new_skill;
+      });
+
+      skills_ready = true;
+    }
+
+    // Reset skills
+    function resetSkills()
+    {
+      for (var skill in skills)
+      {
+        for (var prop in skills[skill])
+        {
+          var obj = skills[skill];
+
+          if(prop == "interv")
+          {
+            if(obj[prop] != null)
+            {
+              clearInterval(obj[prop]);
+              obj[prop] = null;
+            }
+          }
+          else obj[prop] = 0;
+
+          console.log("obj."+skill+ ", prop " + obj[prop]);
+        }
       }
-    };
 
-    function loopCircle(skill_name, deg_limit)
+      started = false;
+    }
+
+    // Toogle circle skill
+    function toogleCircle()
+    {
+      if(!started && skills_ready)
+      {
+          started = true;
+          $("#skill .active-border").each(function(index, element) {
+
+              if($(this).css("display") != "none")
+              {
+                  // Keep only name of the skill
+                  var skill_name = this.id.split("-skill")[0];
+                  // keep only angle of the span
+                  var deg_limit = $(this).find("span").attr("class").split(" c")[1];
+                  skills[skill_name].interv = setInterval( function(){ drawCircle(skill_name, deg_limit); }, 10 );
+              }
+          });
+      }
+    }
+
+    // Draw circle of the skill
+    function drawCircle(skill_name, deg_limit)
     {
       // Get time of the skill
       var i = skills[skill_name].time;
@@ -379,26 +433,30 @@
       // Change circle with new value
       if(i <= 180)
       {
-        $("#"+skill_name+"-skill").css('background-image','linear-gradient('+(90 + i)+'deg, transparent 50%, #A2ECFB 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)');
+        $("#"+skill_name+"-skill").css("background-image","linear-gradient("+(90 + i)+"deg, transparent 50%, #A2ECFB 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)");
       }
       else
           {
-            $("#"+skill_name+"-skill").css('background-image','linear-gradient('+(i - 90)+'deg, transparent 50%, #FFBD2B 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)');
+            $("#"+skill_name+"-skill").css("background-image","linear-gradient("+(i - 90)+"deg, transparent 50%, #FFBD2B 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)");
           }
 
       // If time is equal or sup to limit, stop interval
       if(i >= deg_limit)
       {
         clearInterval(skills[skill_name].interv);
+        skills[skill_name].interv = null;
       }
     }
 
-    function toogleCircle()
-    {
-      skills["java"].interv = setInterval( function(){ loopCircle("java", 270); }, 10 );
-      skills["cpp"].interv = setInterval( function(){ loopCircle("cpp", 270); }, 10 );
-    }
 
+
+    // DOCUMENT READY
+    $(document).ready(function()
+    {
+      initSkills();
+    });
+
+    // WINDOW SCROLL
     $(window).scroll(function() {
 
       // Current scroll top
@@ -407,15 +465,11 @@
       var wind = $(window).height();
 
       // Top skill part
-      var skill = $('#skill').offset().top;
+      var skill = $("#skill").offset().top;
 
       if(scroll >= skill - wind + wind / 2)
       {
-        if(!started)
-        {
-            toogleCircle();
-            started = true;
-        }
+        toogleCircle();
       }
     });
 
