@@ -3,7 +3,7 @@ body {
   text-align: center;
 }
 
-/* NAV */
+/**** NAV ****/
 
 nav {
   /*border: 1px solid yellow !important;*/
@@ -46,7 +46,7 @@ nav {
   color: #FFBD2B;
 }
 
-/* MENU */
+/**** MENU ****/
 
 #menu {
   width: 100vw;
@@ -82,7 +82,7 @@ nav {
   }
 }
 
-/* HOME */
+/**** HOME ****/
 
 #home {
   height: 600px;
@@ -98,7 +98,7 @@ nav {
   color: #FFBD2B;
 }
 
-/* ABOUT */
+/**** ABOUT ****/
 
 #about {
   background-color: white;
@@ -151,10 +151,10 @@ nav {
   }
 }
 
-/* SKILL */
+/**** SKILL ****/
 
 #skill {
-  min-height: 300px;
+  min-height: 470px;
   background-color: #14BCC7;
 }
 
@@ -172,7 +172,7 @@ nav {
 }
 
 #skill button {
-  width:100px;
+  width: 100px;
   height: 50px;
   border: none;
   background-color: #164C6E;
@@ -209,6 +209,7 @@ nav {
   }
 }
 
+/* BIG CIRCLE */
 
 .active-border{
   position: relative;
@@ -255,14 +256,53 @@ else (deg > 180)
   width: 64px;
   height: auto;
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 20px;
 }
 
 .prec {
-  top: 75px;
+  top: 70px;
   position: relative;
   font-size: 10px;
+}
+
+/* MINI CIRCLE */
+
+.inactive-border {
+  position: relative;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+
+  background-color: #A2ECFB;
+  background-image:
+      linear-gradient(91deg, transparent 50%, #A2ECFB 50%),
+      linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
+
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.mini-circle {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #E6F4F7;
+}
+
+.mini-circle img {
+  width: 32px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 /* LANGUAGE */
@@ -281,12 +321,6 @@ else (deg > 180)
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
-/* 25% */
-#ada-skill, #python-skill, #ruby-skill {
-  background-image:
-      linear-gradient(180deg, transparent 50%, #A2ECFB 50%),
-      linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
-}
 
 /* CONCEPTION */
 
@@ -298,7 +332,7 @@ else (deg > 180)
 }
 
 /* 50% */
-#pattern-skill, #uml-skill, #merise-skill, #git-skill {
+#pattern-skill, #uml-skill, #merise-skill {
   background-image:
       linear-gradient(270deg, transparent 50%, #A2ECFB 50%),
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
@@ -313,13 +347,6 @@ else (deg > 180)
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
-/* 25% */
-#symfony-skill, #angularjs-skill {
-  background-image:
-      linear-gradient(180deg, transparent 50%, #A2ECFB 50%),
-      linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
-}
-
 /* SOFTWARE */
 
 /* 50% */
@@ -329,9 +356,13 @@ else (deg > 180)
       linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
 }
 
-/* 25% */
-#visual-skill, #sublime-skill, #atom-skill, #photoshop-skill, #gimp-skill, #office-skill, #open-skill {
-  background-image:
-      linear-gradient(180deg, transparent 50%, #A2ECFB 50%),
-      linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
+/**** PROJECT ****/
+
+#project {
+  min-height: 470px;
+}
+
+#project h1 {
+  color: #0CAEE8;
+  text-transform: uppercase;
 }
