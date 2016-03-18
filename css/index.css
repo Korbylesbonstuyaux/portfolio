@@ -209,6 +209,12 @@ nav {
   }
 }
 
+#skill a, #skill a:hover {
+  outline: none !important;
+  decoration: none !important;
+  color: none !important;
+  text-decoration: none !important
+}
 /* BIG CIRCLE */
 
 .active-border{
@@ -264,6 +270,7 @@ else (deg > 180)
   top: 70px;
   position: relative;
   font-size: 10px;
+  color: black;
 }
 
 /* MINI CIRCLE */
