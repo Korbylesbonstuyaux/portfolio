@@ -39,7 +39,7 @@
             <div class="bloc-about">
               <div id="picture-about" class="">
                 <img id="frame-about" src="images/icons/ipad.png" alt="Ipad">
-                <img id="photo-about" src="images/photos/me_white.jpg" alt="Moi" />
+                <img id="photo-about" src="images/photos/me_white_400.jpg" alt="Moi" />
               </div>
             </div>
           </div>
@@ -324,7 +324,89 @@
       <div class="container">
         <h1>Projets</h1>
         <div class="row">
+          <div id="content-project" class="bloc">
+            <img id="portable" src="images/backgrounds/portable.png" alt="Portable" />
+            <!-- <div id="projects" class="bloc">
 
+            </div> -->
+            <div id="projects-list" class="bloc">
+              <div class="projects selected">
+                <button class="show-project" type="button" name="button">
+                  <div class="image-project">
+                    <img src="images/photos/portfolio_1024_512.jpg" alt="Projet Portfolio" class="img-thumbnail">
+                  </div>
+                  <div class="maintitle-project">
+                    <span class="title">New Portfolio</span>
+                    <br>
+                    <span class="date">2016</span>
+                    <br>
+                    <span class="num"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="projects">
+                <button class="show-project" type="button" name="button">
+                  <div class="image-project">
+                    <img src="images/photos/code_finder_1024_512.jpg" alt="Projet Code Finder" class="img-thumbnail">
+                  </div>
+                  <div class="maintitle-project">
+                    <span class="title">Code Finder</span>
+                    <br>
+                    <span class="date">2015</span>
+                    <br>
+                    <span class="num"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="projects">
+                <button class="show-project" type="button" name="button">
+                  <div class="image-project">
+                    <img src="images/photos/bike_1024_512.jpg" alt="Projet Lizard Bike" class="img-thumbnail">
+                  </div>
+                  <div class="maintitle-project">
+                    <span class="title">Lizard Bike</span>
+                    <br>
+                    <span class="date">2014</span>
+                    <br>
+                    <span class="num"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="projects">
+                <button class="show-project" type="button" name="button">
+                  <div class="image-project">
+                    <img src="images/photos/tooth_1024_512.jpg" alt="Projet Super Dent" class="img-thumbnail">
+                  </div>
+                  <div class="maintitle-project">
+                    <span class="title">Super Dent</span>
+                    <br>
+                    <span class="date">2013</span>
+                    <br>
+                    <span class="num"></span>
+                  </div>
+                </button>
+              </div>
+              <div class="projects">
+                <button class="show-project" type="button" name="button">
+                  <div class="image-project">
+                    <img src="images/photos/castle_1024_512.jpg" alt="Projet Castle Generator" class="img-thumbnail">
+                  </div>
+                  <div class="maintitle-project">
+                    <span class="title">Castle Generator</span>
+                    <br>
+                    <span class="date">2013</span>
+                    <br>
+                    <span class="num"></span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <button id="prev" type="button" name="button" class="btn-lg">Prev</button>
+            <button id="zoom" type="button" name="button" class="btn-lg">Zoom</button>
+            <button id="next" type="button" name="button" class="btn-lg">Next</button>
+          </div>
         </div>
       </div>
     </div>
@@ -365,6 +447,7 @@
 
   <script src="scripts/bootstrap.js"></script>
   <script src="scripts/jquery-2.2.1.min.js"></script>
+  <script src="scripts/skills_part.js"></script>
   <script type="text/javascript">
 
     // MENU PART
@@ -386,160 +469,181 @@
            }
     }
 
-    function displaySkillsOnReady()
+    var zoom = false;
+    var change_project = false;
+
+    function zoomProject()
     {
-      var selected_skill = $("#skill button.selected").attr("id");
+      // Scale portable to 3.5
+      $("#portable").css("transform","scale(3.5)");
+      // $("#portable").delay(500).css("opacity","0");
 
-      $(".active-border, .inactive-border").fadeOut();
+      // 100% size of selected project
+      $("#projects-list").css("width","100%");
+      $("#projects-list").css("height","100%");
+      $("#projects-list").css("top","0");
+      $("#projects-list").css("left","0");
 
-      // Show skills
-      if(selected_skill != "all-skill")
-      {
-
-        $(".active-border."+selected_skill+", .inactive-border."+selected_skill).fadeIn();
-      }
-      else {
-              $(".active-border, .inactive-border").fadeIn();
-           }
+      // Up font size header project
+      setSizeProject(2);
     }
 
-    // SKILL PART
-    $("#skill button").click(function()
+    function dezoomProject()
     {
-      // If not selected
-      if(!$(this).hasClass("selected"))
+      // Normal scale portable
+      $("#portable").css("transform","scale(1)");
+
+      // Normal size of selected project
+      $("#projects-list").css("width","62%");
+      $("#projects-list").css("height","60%");
+      $("#projects-list").css("top","5%");
+      $("#projects-list").css("left","18.6%");
+
+      // Normal font size header project
+      // $(".projects .title").css("font-size", "2em");
+      // $(".projects .date").css("font-size", "1em");
+      setSizeProject(1);
+    }
+
+    function setSizeProject(multi)
+    {
+      var title_fs = 2;
+      var date_fs = 1;
+      var date_num = 0.75;
+
+      if(windW < 1200)
       {
-        $(".active-border, .inactive-border").fadeOut("slow");
+        title_fs = 1.5; date_fs = 1; date_num = 0.75;
+      }
 
-        // Show skills
-        if(this.id != "all-skill")
-        {
+      if(windW < 700)
+      {
+        title_fs = 1; date_fs = 0.75; date_num = 0.5;
+      }
 
-          $(".active-border."+this.id+", .inactive-border."+this.id).delay(500).fadeIn("slow");
-        }
-        else {
-                $(".active-border, .inactive-border").delay(500).fadeIn("slow");
-             }
+      if(windW < 350)
+      {
+        title_fs = 0.7; date_fs = 0.4; date_num = 0.4;
+      }
 
-        // Change selected button
-        $("#skill button.selected").removeClass("selected");
-        $(this).addClass("selected");
+      $(".projects .title").css("font-size", (title_fs * multi)+"em");
+      $(".projects .date").css("font-size", (date_fs * multi)+"em");
+      $(".projects .num").css("font-size", (date_num * multi)+"em");
+    }
 
-        resetSkills();
-        setTimeout(toogleCircle, 500);
+    // PROJECT PART
+    $("#zoom, .show-project").click(function()
+    {
+      if(!zoom)
+      {
+          // ZOOM
+          zoomProject();
+      }
+      else {
+              // DEZOOM
+              dezoomProject();
+           }
+
+      zoom = !zoom;
+    });
+
+    function displayProject(index)
+    {
+      $(".projects").fadeOut("slow");
+      // WARNING : NTH-CHILD Start to 1, no 0
+      $(".projects:nth-child("+index+") .num").html(index+"/"+$(".projects").length);
+      $(".projects:nth-child("+index+")").delay(600).fadeIn("slow");
+      setTimeout(function() {change_project = true; }, 800);
+    }
+
+    function prevProject()
+    {
+      var index = -1;
+
+      if($(".projects.selected").prev().length)
+      {
+        var project = $(".projects.selected").prev();
+        $(".projects.selected").removeClass("selected");
+        project.addClass("selected");
+        index = $(".projects").index($(".projects.selected")) + 1;
+      }
+      else {
+              $(".projects.selected").removeClass("selected");
+              // Back to last project
+              index = $(".projects").length;
+              $(".projects:nth-child("+index+")").addClass("selected");
+           }
+
+      displayProject(index);
+    }
+
+    function nextProject()
+    {
+      var index = -1;
+
+      if($(".projects.selected").next().length)
+      {
+        var project = $(".projects.selected").next();
+        $(".projects.selected").removeClass("selected");
+        project.addClass("selected");
+        index = $(".projects").index($(".projects.selected")) + 1;
+      }
+      else {
+              $(".projects.selected").removeClass("selected");
+              // Back to first project
+              index = 1;
+              $(".projects:nth-child("+index+")").addClass("selected");
+           }
+
+      displayProject(index);
+    }
+
+    $("#next").click(function()
+    {
+      if(change_project)
+      {
+        change_project = false;
+        nextProject();
       }
     });
 
-    var started = false;
-    var skills_ready = false;
-    var skills = {};
-
-    // Init skills to object
-    function initSkills()
+    $("#prev").click(function()
     {
-      $("#skill .active-border").each(function(index, element) {
-        // Create skill
-        var new_skill = {};
-        new_skill["time"] = 0;
-        new_skill["interv"] = null;
-
-        // Add skill to object
-        var name = this.id.split("-skill")[0];
-        skills[name] = new_skill;
-      });
-
-      skills_ready = true;
-    }
-
-    // Reset skills
-    function resetSkills()
-    {
-      for (var skill in skills)
+      if(change_project)
       {
-        for (var prop in skills[skill])
-        {
-          var obj = skills[skill];
-
-          if(prop == "interv")
-          {
-            if(obj[prop] != null)
-            {
-              clearInterval(obj[prop]);
-              obj[prop] = null;
-            }
-          }
-          else obj[prop] = 0;
-
-          console.log("obj."+skill+ ", prop " + obj[prop]);
-        }
+        change_project = false;
+        prevProject();
       }
-
-      started = false;
-    }
-
-    // Toogle circle skill
-    function toogleCircle()
-    {
-      if(!started && skills_ready)
-      {
-          started = true;
-          $("#skill .active-border").each(function(index, element) {
-
-              if($(this).css("display") != "none")
-              {
-                  // Keep only name of the skill
-                  var skill_name = this.id.split("-skill")[0];
-                  // keep only angle of the span
-                  var deg_limit = $(this).find("span").attr("class").split(" c")[1];
-                  skills[skill_name].interv = setInterval( function(){ drawCircle(skill_name, deg_limit); }, 10 );
-              }
-          });
-      }
-    }
-
-    // Draw circle of the skill
-    function drawCircle(skill_name, deg_limit)
-    {
-      // Get time of the skill
-      var i = skills[skill_name].time;
-
-      // Add more one to time
-      i++;
-
-      if(i <= 0)
-        i = 0;
-
-      if(i > deg_limit)
-        i = deg_limit;
-
-      // Set time of the skill
-      skills[skill_name].time = i;
-
-      // Change circle with new value
-      if(i <= 180)
-      {
-        $("#"+skill_name+"-skill").css("background-image","linear-gradient("+(90 + i)+"deg, transparent 50%, #A2ECFB 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)");
-      }
-      else
-          {
-            $("#"+skill_name+"-skill").css("background-image","linear-gradient("+(i - 90)+"deg, transparent 50%, #FFBD2B 50%),linear-gradient(90deg, #A2ECFB 50%, transparent 50%)");
-          }
-
-      // If time is equal or sup to limit, stop interval
-      if(i >= deg_limit)
-      {
-        clearInterval(skills[skill_name].interv);
-        skills[skill_name].interv = null;
-      }
-    }
+    });
 
 
+
+    // Window width
+    var windW = 0;
+    // Window heigth
+    var windH = 0;
 
     // DOCUMENT READY
-    $(document).ready(function()
-    {
+    $(document).ready(function() {
+      windW = $(window).width();
+      windH = $(window).height();
+
+      if (zoom)
+        setSizeProject(2);
+      else setSizeProject(1);
+
       displaySkillsOnReady();
       initSkills();
+      displayProject(1);
+    });
+
+    $( window ).resize(function() {
+      windW = $(window).width();
+      windH = $(window).height();
+
+      if (zoom)
+        setSizeProject(2);
+      else setSizeProject(1);
     });
 
     // WINDOW SCROLL
@@ -547,13 +651,13 @@
 
       // Current scroll top
       var scroll = $(window).scrollTop();
-      // Window heigth
-      var wind = $(window).height();
+
+      windH = $(window).height();
 
       // Top skill part
       var skill = $("#skill").offset().top;
 
-      if(scroll >= skill - wind + wind / 2)
+      if(scroll >= skill - windH + windH / 2)
       {
         toogleCircle();
       }
