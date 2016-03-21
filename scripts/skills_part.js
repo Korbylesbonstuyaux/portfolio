@@ -8,16 +8,16 @@ function displaySkillsOnReady()
 {
   var selected_skill = $("#skill button.selected").attr("id");
 
-  $(".active-border, .inactive-border").fadeOut();
+  $("#skill .active-border, #skill .inactive-border").fadeOut();
 
   // Show skills
   if(selected_skill != "all-skill")
   {
 
-    $(".active-border."+selected_skill+", .inactive-border."+selected_skill).fadeIn();
+    $("#skill .active-border."+selected_skill+", #skill .inactive-border."+selected_skill).fadeIn();
   }
   else {
-          $(".active-border, .inactive-border").fadeIn();
+          $("#skill .active-border, #skill .inactive-border").fadeIn();
        }
 }
 
@@ -26,16 +26,16 @@ $("#skill button").click(function()
   // If not selected
   if(!$(this).hasClass("selected"))
   {
-    $(".active-border, .inactive-border").fadeOut("slow");
+    $("#skill .active-border, #skill .inactive-border").fadeOut("slow");
 
     // Show skills
     if(this.id != "all-skill")
     {
 
-      $(".active-border."+this.id+", .inactive-border."+this.id).delay(500).fadeIn("slow");
+      $("#skill .active-border."+this.id+", #skill .inactive-border."+this.id).delay(500).fadeIn("slow");
     }
     else {
-            $(".active-border, .inactive-border").delay(500).fadeIn("slow");
+            $("#skill .active-border, #skill .inactive-border").delay(500).fadeIn("slow");
          }
 
     // Change selected button

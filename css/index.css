@@ -382,11 +382,14 @@ else (deg > 180)
 
 #content-project {
   width: 80%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
   margin: auto;
   margin-top: 10px;
   position: relative;
+
+  transition: height 0.9s ease-in-out;
+  background-color: white;
 }
 
 /* MEDIA QUERIES CONTENT PROJECT */
@@ -406,8 +409,7 @@ else (deg > 180)
 #portable {
   width: 100% !important;
   height: auto;
-  transition: all .5s ease-in-out;
-  height: auto;
+  transition: all 0.5s ease-in-out;
   position: relative;
   display: inline-block;
 }
@@ -435,6 +437,7 @@ else (deg > 180)
   flex-direction: column;
   justify-content: center;
 }
+
 
 .projects {
   display: none;
@@ -471,6 +474,23 @@ else (deg > 180)
   color: #7C8081;
   font-size: 0.5em;
   transition: all .4s ease-in-out;
+}
+
+.bloc1 {
+  border: 1px solid green;
+}
+
+.header-project {
+  overflow: hidden;
+  height: 100%;
+  transition: all 1.0s ease-in-out;
+}
+
+.description-project {
+  overflow: hidden;
+  height: 0;
+  transition: all 2.0s ease-in-out;
+  background-color: white;
 }
 
 @media (max-width: 450px)

@@ -123,7 +123,7 @@
             <div id="html-skill" class="active-border language">
               <div class="circle">
                 <a  data-toggle="tooltip" data-placement="top" title="Langage HTML5">
-                  <img src="images/icons/html_128.png" alt="Icone HTML 5" />
+                  <img src="images/icons/html_128.png" alt="Icone HTML5" />
                   <span class="prec c180">Intermédiaire</span>
                 </a>
               </div>
@@ -131,7 +131,7 @@
             <div id="css-skill" class="active-border language">
               <div class="circle">
                 <a  data-toggle="tooltip" data-placement="top" title="Langage CSS3">
-                  <img src="images/icons/css_128.png" alt="Icone CSS 3" />
+                  <img src="images/icons/css_128.png" alt="Icone CSS3" />
                   <span class="prec c180">Intermédiaire</span>
                 </a>
               </div>
@@ -184,6 +184,14 @@
               <div class="circle">
                 <a  data-toggle="tooltip" data-placement="top" title="Framework Boostrap">
                   <img src="images/icons/bootstrap_128.png" alt="Icone Boostrap" />
+                  <span class="prec c180">Intermédiaire</span>
+                </a>
+              </div>
+            </div>
+            <div id="jquery-skill" class="active-border framework">
+              <div class="circle">
+                <a  data-toggle="tooltip" data-placement="top" title="Framework JQuery">
+                  <img src="images/icons/jquery_128.png" alt="Icone JQuery" />
                   <span class="prec c180">Intermédiaire</span>
                 </a>
               </div>
@@ -331,18 +339,79 @@
             </div> -->
             <div id="projects-list" class="bloc">
               <div class="projects selected">
-                <button class="show-project" type="button" name="button">
-                  <div class="image-project">
-                    <img src="images/photos/portfolio_1024_512.jpg" alt="Projet Portfolio" class="img-thumbnail">
-                  </div>
-                  <div class="maintitle-project">
-                    <span class="title">New Portfolio</span>
+                <div class="header-project">
+                  <button class="show-project" type="button" name="button">
+                    <div class="image-project">
+                      <img src="images/photos/portfolio_1024_512.jpg" alt="Projet Portfolio" class="img-thumbnail">
+                    </div>
+                    <div class="maintitle-project">
+                      <span class="title">New Portfolio</span>
+                      <br>
+                      <span class="date">2016</span>
+                      <br>
+                      <span class="num"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="description-project bloc1">
+                  <h1>New Portfolio</h1>
+                  <p class="resume">
+                    <h3>Description du projet</h3>
+                    Ce nouveau portfolio a été réalisé dans le cadre d'école du numérique UP TO afin de mettre en pratique les acquis durant cette formation.
                     <br>
-                    <span class="date">2016</span>
-                    <br>
-                    <span class="num"></span>
-                  </div>
-                </button>
+                    Le but de ce site est de montrer mes compétences, mes projets et mes expériences professionnelles dans le domaine informatique à des employeurs ou à des personnes ayant des connaissances dans ce milieu.
+                    Il a été refait de A à Z par mes soins pour avoir un site simple, clair et qui s'adapte à tous les supports afin d'offrir une expérience de consultation confortable.
+                  </p>
+                  <p class="tool">
+                    <h3>Outils utilisés</h3>
+                    <div id="html-skill" class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage HTML5">
+                          <img src="images/icons/html_128.png" alt="Icone HTML5" />
+                        </a>
+                      </div>
+                    </div>
+                    <div id="css-skill" class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage CSS3">
+                          <img src="images/icons/css_128.png" alt="Icone CSS3" />
+                        </a>
+                      </div>
+                    </div>
+                    <div id="js-skill" class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage Javascript">
+                          <img src="images/icons/js_128.png" alt="Icone Javascript" />
+                        </a>
+                      </div>
+                    </div>
+                    <div id="php-skill" class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage PHP">
+                          <img src="images/icons/php_128.png" alt="Icone PHP" />
+                        </a>
+                      </div>
+                    </div>
+                    <div id="bootstrap-skill" class="inactive-border framework">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Framework Boostrap">
+                          <img src="images/icons/bootstrap_128.png" alt="Icone Bootstrap" />
+                        </a>
+                      </div>
+                    </div>
+                    <div id="jquery-skill" class="inactive-border framework">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Framework JQuery">
+                          <img src="images/icons/jquery_128.png" alt="Icone JQuery" />
+                        </a>
+                      </div>
+                    </div>
+                  </p>
+                  <p class="creator">
+                    <h3>Créateurs</h3>
+                    Dross Pierre-Anthony
+                  </p>
+                </div>
               </div>
               <div class="projects">
                 <button class="show-project" type="button" name="button">
@@ -406,6 +475,10 @@
             <button id="prev" type="button" name="button" class="btn-lg">Prev</button>
             <button id="zoom" type="button" name="button" class="btn-lg">Zoom</button>
             <button id="next" type="button" name="button" class="btn-lg">Next</button>
+          </div>
+          <div class="col-xs-12">
+            <div class="bloc">
+            </div>
           </div>
         </div>
       </div>
@@ -471,6 +544,14 @@
 
     var zoom = false;
     var change_project = false;
+    var content_projectH = 0;
+
+    function setContentProjectH()
+    {
+      var content_projectW = $("#content-project").css('width').split("px")[0];
+      content_projectH = (611 * content_projectW) / 934;
+      $("#content-project").css("height", "100%");
+    }
 
     function zoomProject()
     {
@@ -486,23 +567,55 @@
 
       // Up font size header project
       setSizeProject(2);
+
+      $("#portable").delay(500).css("opacity", "0");
+
+      $(".projects.selected .header-project").css("height", "0px");
+
+      content_projectH = $("#content-project").prop('scrollHeight');
+      $("#content-project").css("height", content_projectH+"px");
+
+      // Show description
+      setTimeout(function()
+      {
+        var description_projectH = $(".projects.selected .description-project").prop('scrollHeight');
+        $(".projects.selected .description-project").css("height", "100%");
+
+        if(description_projectH > content_projectH)
+        {
+          $("#content-project").css("height", description_projectH+"px");
+        }
+      }, 1000);
+
     }
 
     function dezoomProject()
     {
-      // Normal scale portable
-      $("#portable").css("transform","scale(1)");
+      setContentProjectH();
+      $("#content-project").css("height", content_projectH+"px");
 
-      // Normal size of selected project
-      $("#projects-list").css("width","62%");
-      $("#projects-list").css("height","60%");
-      $("#projects-list").css("top","5%");
-      $("#projects-list").css("left","18.6%");
+      $("#portable").css("opacity", "1");
+      $(".projects.selected .description-project").css("height", "0");
 
-      // Normal font size header project
-      // $(".projects .title").css("font-size", "2em");
-      // $(".projects .date").css("font-size", "1em");
-      setSizeProject(1);
+      setTimeout(function()
+      {
+        $(".projects.selected .header-project").css("height", "100%");
+      }, 2000);
+
+      setTimeout(function()
+      {
+        // Normal scale portable
+        $("#portable").css("transform","scale(1)");
+
+        // Normal size of selected project
+        $("#projects-list").css("width","62%");
+        $("#projects-list").css("height","60%");
+        $("#projects-list").css("top","5%");
+        $("#projects-list").css("left","18.6%");
+
+        setSizeProject(1);
+      }, 3500);
+
     }
 
     function setSizeProject(multi)
@@ -644,6 +757,8 @@
       if (zoom)
         setSizeProject(2);
       else setSizeProject(1);
+
+      setContentProjectH();
     });
 
     // WINDOW SCROLL
