@@ -334,10 +334,7 @@
         <div class="row">
           <div id="content-project" class="bloc">
             <img id="portable" src="images/backgrounds/portable.png" alt="Portable" />
-            <!-- <div id="projects" class="bloc">
-
-            </div> -->
-            <div id="projects-list" class="bloc">
+            <div id="projects-list">
               <div class="projects selected">
                 <div class="header-project">
                   <button class="show-project" type="button" name="button">
@@ -353,121 +350,347 @@
                     </div>
                   </button>
                 </div>
-                <div class="description-project bloc1">
-                  <h1>New Portfolio</h1>
-                  <p class="resume">
+                <div class="description-project">
+                  <div class="btn-close">
+                    <button class="show-project" type="button" name="button">X</button>
+                  </div>
+                  <h2>New Portfolio</h2>
+                  <div class="resume">
                     <h3>Description du projet</h3>
                     Ce nouveau portfolio a été réalisé dans le cadre d'école du numérique UP TO afin de mettre en pratique les acquis durant cette formation.
                     <br>
                     Le but de ce site est de montrer mes compétences, mes projets et mes expériences professionnelles dans le domaine informatique à des employeurs ou à des personnes ayant des connaissances dans ce milieu.
                     Il a été refait de A à Z par mes soins pour avoir un site simple, clair et qui s'adapte à tous les supports afin d'offrir une expérience de consultation confortable.
-                  </p>
-                  <p class="tool">
+                  </div>
+                  <div class="tool">
                     <h3>Outils utilisés</h3>
-                    <div id="html-skill" class="inactive-border langage">
+                    <div class="inactive-border langage">
                       <div class="mini-circle">
                         <a  data-toggle="tooltip" data-placement="top" title="Langage HTML5">
                           <img src="images/icons/html_128.png" alt="Icone HTML5" />
                         </a>
                       </div>
                     </div>
-                    <div id="css-skill" class="inactive-border langage">
+                    <div class="inactive-border langage">
                       <div class="mini-circle">
                         <a  data-toggle="tooltip" data-placement="top" title="Langage CSS3">
                           <img src="images/icons/css_128.png" alt="Icone CSS3" />
                         </a>
                       </div>
                     </div>
-                    <div id="js-skill" class="inactive-border langage">
+                    <div class="inactive-border langage">
                       <div class="mini-circle">
                         <a  data-toggle="tooltip" data-placement="top" title="Langage Javascript">
                           <img src="images/icons/js_128.png" alt="Icone Javascript" />
                         </a>
                       </div>
                     </div>
-                    <div id="php-skill" class="inactive-border langage">
+                    <div class="inactive-border langage">
                       <div class="mini-circle">
                         <a  data-toggle="tooltip" data-placement="top" title="Langage PHP">
                           <img src="images/icons/php_128.png" alt="Icone PHP" />
                         </a>
                       </div>
                     </div>
-                    <div id="bootstrap-skill" class="inactive-border framework">
+                    <div class="inactive-border framework">
                       <div class="mini-circle">
                         <a  data-toggle="tooltip" data-placement="top" title="Framework Boostrap">
                           <img src="images/icons/bootstrap_128.png" alt="Icone Bootstrap" />
                         </a>
                       </div>
                     </div>
-                    <div id="jquery-skill" class="inactive-border framework">
+                    <div class="inactive-border framework">
                       <div class="mini-circle">
                         <a  data-toggle="tooltip" data-placement="top" title="Framework JQuery">
                           <img src="images/icons/jquery_128.png" alt="Icone JQuery" />
                         </a>
                       </div>
                     </div>
-                  </p>
-                  <p class="creator">
+                    <div class="inactive-border software">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Logiciel Atom">
+                          <img src="images/icons/atom_128.png" alt="Icone Atom" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="creator">
                     <h3>Créateurs</h3>
-                    Dross Pierre-Anthony
-                  </p>
+                    DROSS Pierre-Anthony
+                  </div>
                 </div>
               </div>
               <div class="projects">
-                <button class="show-project" type="button" name="button">
-                  <div class="image-project">
-                    <img src="images/photos/code_finder_1024_512.jpg" alt="Projet Code Finder" class="img-thumbnail">
+                <div class="header-project">
+                  <button class="show-project" type="button" name="button">
+                    <div class="image-project">
+                      <img src="images/photos/code_finder_1024_512.jpg" alt="Projet Code Finder" class="img-thumbnail">
+                    </div>
+                    <div class="maintitle-project">
+                      <span class="title">Code Finder</span>
+                      <br>
+                      <span class="date">2015</span>
+                      <br>
+                      <span class="num"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="description-project">
+                  <div class="btn-close">
+                    <button class="show-project" type="button" name="button">X</button>
                   </div>
-                  <div class="maintitle-project">
-                    <span class="title">Code Finder</span>
+                  <h2>Code Finder</h2>
+                  <div class="resume">
+                    <h3>Description du projet</h3>
+                    Ce projet a été réalisé dans le cadre personnel suite à le demande de certains utilisateurs du site LaRedoute qui n'arrivaient plus à s'y retrouver dans les codes promos: conditions d'utilisations pas claires, réductions qui diffèrent en fonction du nombre de produits dans le panier.
                     <br>
-                    <span class="date">2015</span>
-                    <br>
-                    <span class="num"></span>
+                    Le programme a pour but de faciliter les utilisateurs de ce site en obtenant le code (parmi une liste contenue dans un fichier XML) ayant le montant total de la commande le plus avantageux.
                   </div>
-                </button>
+                  <div class="video">
+                    <h3>Vidéo</h3>
+                    <button data-toggle="modal" data-backdrop="static" href="#infos" class="btn btn-primary" src="finder" title="Code Finder"><span class="glyphicon glyphicon-play"></span></button>
+                  </div>
+                  <div class="tool">
+                    <h3>Outils utilisés</h3>
+                    <div class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage Java">
+                          <img src="images/icons/java_128.png" alt="Icone Java" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border conception">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Programmation Orientée Objet : POO">
+                          <img src="images/icons/poo_128.png" alt="Icone Programmation Orientée Objet (POO)" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border conception">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Patron de Conception">
+                          <img src="images/icons/pattern_128.png" alt="Icone Patron de Conception" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border library">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Librairie Selenium">
+                          <img src="images/icons/selenium_128.png" alt="Icone Selenium" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="creator">
+                    <h3>Créateurs</h3>
+                    DROSS Pierre-Anthony
+                  </div>
+                </div>
               </div>
               <div class="projects">
-                <button class="show-project" type="button" name="button">
-                  <div class="image-project">
-                    <img src="images/photos/bike_1024_512.jpg" alt="Projet Lizard Bike" class="img-thumbnail">
+                <div class="header-project">
+                  <button class="show-project" type="button" name="button">
+                    <div class="image-project">
+                      <img src="images/photos/bike_1024_512.jpg" alt="Projet Lizard Bike" class="img-thumbnail">
+                    </div>
+                    <div class="maintitle-project">
+                      <span class="title">Lizard Bike</span>
+                      <br>
+                      <span class="date">2014</span>
+                      <br>
+                      <span class="num"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="description-project">
+                  <div class="btn-close">
+                    <button class="show-project" type="button" name="button">X</button>
                   </div>
-                  <div class="maintitle-project">
-                    <span class="title">Lizard Bike</span>
+                  <h2>Lizard Bike</h2>
+                  <div class="resume">
+                    <h3>Description du projet</h3>
+                    Ce projet a été réalisé dans le cadre du TER (Travail d’Etude et de Recherche) du Semestre 4 en MASTER 2 IMAGINA à l'Université de Montpellier 2 et avait pour but de créer un jeu sérieux. Jeu dont l'objectif est éducatif : apprendre le vélo et la sécurité routière aux enfants.
                     <br>
-                    <span class="date">2014</span>
-                    <br>
-                    <span class="num"></span>
+                    La finalité du projet est de coupler le serious game à un simulateur de vélo pleine échelle, afin mettre en situation les enfants.
                   </div>
-                </button>
+                  <div class="video">
+                    <h3>Vidéo</h3>
+                    <button data-toggle="modal" data-backdrop="static" href="#infos" class="btn btn-primary" src="bike" title="Lizard Bike"><span class="glyphicon glyphicon-play"></span></button>
+                  </div>
+                  <div class="tool">
+                    <h3>Outils utilisés</h3>
+                    <div class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage C#">
+                          <img src="images/icons/c_sharp_128.png" alt="Icone C#" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border software">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Logiciel Unity 3D">
+                          <img src="images/icons/poo_128.png" alt="Icone Unity 3D" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="creator">
+                    <h3>Créateurs</h3>
+                    DROSS Pierre-Anthony, LESAGE Angélique, MAURIN Benjamin et VANNIER Thiebaud
+                  </div>
+                </div>
               </div>
               <div class="projects">
-                <button class="show-project" type="button" name="button">
-                  <div class="image-project">
-                    <img src="images/photos/tooth_1024_512.jpg" alt="Projet Super Dent" class="img-thumbnail">
+                <div class="header-project">
+                  <button class="show-project" type="button" name="button">
+                    <div class="image-project">
+                      <img src="images/photos/tooth_1024_512.jpg" alt="Projet Super Dent" class="img-thumbnail">
+                    </div>
+                    <div class="maintitle-project">
+                      <span class="title">Super Dent</span>
+                      <br>
+                      <span class="date">2013</span>
+                      <br>
+                      <span class="num"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="description-project">
+                  <div class="btn-close">
+                    <button class="show-project" type="button" name="button">X</button>
                   </div>
-                  <div class="maintitle-project">
-                    <span class="title">Super Dent</span>
+                  <h2>Super Dent</h2>
+                  <div class="resume">
+                    <h3>Description du projet</h3>
+                    Ce projet a été réalisé dans le cadre du TER (Travail d’Etude et de Recherche) du Semestre 4 en MASTER 2 IMAGINA à l'Université de Montpellier 2 et avait pour but de créer un jeu sérieux. Jeu dont l'objectif est éducatif : apprendre le brossage des dents aux enfants.
                     <br>
-                    <span class="date">2013</span>
-                    <br>
-                    <span class="num"></span>
+                    La finalité du projet est d'éduquer les enfants aux bons gestes à effectuer, recommandés par les experts bucco-dentaires, et de respecter le temps préconisé.
                   </div>
-                </button>
+                  <div class="video">
+                    <h3>Vidéo</h3>
+                    <button data-toggle="modal" data-backdrop="static" href="#infos" class="btn btn-primary" src="tooth" title="Super Dent"><span class="glyphicon glyphicon-play"></span></button>
+                  </div>
+                  <div class="tool">
+                    <h3>Outils utilisés</h3>
+                    <div class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage Java">
+                          <img src="images/icons/java_128.png" alt="Icone Java" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border software">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Logiciel Eclipse">
+                          <img src="images/icons/eclipse_128.png" alt="Icone Eclispe" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border conception">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Programmation Orientée Objet : POO">
+                          <img src="images/icons/poo_128.png" alt="Icone Programmation Orientée Objet (POO)" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border conception">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Patron de Conception">
+                          <img src="images/icons/pattern_128.png" alt="Icone Patron de Conception" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border library">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Librairie Libgdx">
+                          <img src="images/icons/libgdx_128.png" alt="Icone Libgdx" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border library">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Librairie OpenNI">
+                          <img src="images/icons/openni_128.png" alt="Icone OpenNI" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="creator">
+                    <h3>Créateurs</h3>
+                    DROSS Pierre-Anthony
+                  </div>
+                </div>
               </div>
               <div class="projects">
-                <button class="show-project" type="button" name="button">
-                  <div class="image-project">
-                    <img src="images/photos/castle_1024_512.jpg" alt="Projet Castle Generator" class="img-thumbnail">
+                <div class="header-project">
+                  <button class="show-project" type="button" name="button">
+                    <div class="image-project">
+                      <img src="images/photos/castle_1024_512.jpg" alt="Projet Castle Generator" class="img-thumbnail">
+                    </div>
+                    <div class="maintitle-project">
+                      <span class="title">Castle Generator</span>
+                      <br>
+                      <span class="date">2013</span>
+                      <br>
+                      <span class="num"></span>
+                    </div>
+                  </button>
+                </div>
+                <div class="description-project">
+                  <div class="btn-close">
+                    <button class="show-project" type="button" name="button">X</button>
                   </div>
-                  <div class="maintitle-project">
-                    <span class="title">Castle Generator</span>
+                  <h2>castle Generator</h2>
+                  <div class="resume">
+                    <h3>Description du projet</h3>
+                    Ce projet a été réalisé dans le cadre du module "Moteurs de jeux" du MASTER 2 IMAGINA à l'Université de Montpellier 2 et avait pour but de générer de façon procédurale (ou aléatoire) des châteaux forts sous OpenGL.
                     <br>
-                    <span class="date">2013</span>
+                    projet a 2 grandes parties :
                     <br>
-                    <span class="num"></span>
+                    - Génération du plan 2D où les éléments vont se positionner grâce à l'algorithme de Graham et des quadtrees.
+                    <br>
+                    - Modélisation des objets sous OpenGL avec les primitives et l'utilisation des matrices 4D.
                   </div>
-                </button>
+                  <div class="video">
+                    <h3>Vidéo</h3>
+                    <button data-toggle="modal" data-backdrop="static" href="#infos" class="btn btn-primary" src="castle" title="Castle Generator"><span class="glyphicon glyphicon-play"></span></button>
+                  </div>
+                  <div class="tool">
+                    <h3>Outils utilisés</h3>
+                    <div class="inactive-border langage">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Langage C++">
+                          <img src="images/icons/cpp_128.png" alt="Icone C++" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border conception">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Programmation Orientée Objet : POO">
+                          <img src="images/icons/poo_128.png" alt="Icone Programmation Orientée Objet (POO)" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border software">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Logiciel Microsoft Visual Studio">
+                          <img src="images/icons/visual_128.png" alt="Icone Visual Studio" />
+                        </a>
+                      </div>
+                    </div>
+                    <div class="inactive-border library">
+                      <div class="mini-circle">
+                        <a  data-toggle="tooltip" data-placement="top" title="Librairie OpenGL">
+                          <img src="images/icons/opengl_128.png" alt="Icone OpenGL" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="creator">
+                    <h3>Créateurs</h3>
+                    DROSS Pierre-Anthony et AOUACHE Mohamed
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -476,9 +699,22 @@
             <button id="zoom" type="button" name="button" class="btn-lg">Zoom</button>
             <button id="next" type="button" name="button" class="btn-lg">Next</button>
           </div>
-          <div class="col-xs-12">
-            <div class="bloc">
-            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="infos">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">X</button>
+            <h2 class="modal-title">Vidéo Code Finder</h2>
+          </div>
+          <div class="modal-body">
+            <video controls="controls">
+              <source id="mp4-video" alt="Vidéo du projet format MP4" type="video/mp4" src="videos/finder.mp4"></source>
+              <source id="ogv-video" alt="Vidéo du projet format OGV" type="video/ogv" src="videos/finder.ogv"></source>
+            </video>
           </div>
         </div>
       </div>
@@ -518,8 +754,8 @@
     </div>
   </body>
 
-  <script src="scripts/bootstrap.js"></script>
   <script src="scripts/jquery-2.2.1.min.js"></script>
+  <script src="scripts/bootstrap.js"></script>
   <script src="scripts/skills_part.js"></script>
   <script type="text/javascript">
 
@@ -543,6 +779,7 @@
     }
 
     var zoom = false;
+    var canZoom = true;
     var change_project = false;
     var content_projectH = 0;
 
@@ -594,11 +831,11 @@
       setContentProjectH();
       $("#content-project").css("height", content_projectH+"px");
 
-      $("#portable").css("opacity", "1");
       $(".projects.selected .description-project").css("height", "0");
 
       setTimeout(function()
       {
+        $("#portable").css("opacity", "1");
         $(".projects.selected .header-project").css("height", "100%");
       }, 2000);
 
@@ -647,17 +884,24 @@
     // PROJECT PART
     $("#zoom, .show-project").click(function()
     {
-      if(!zoom)
+      if (canZoom)
       {
-          // ZOOM
-          zoomProject();
-      }
-      else {
-              // DEZOOM
-              dezoomProject();
-           }
+        if(!zoom)
+        {
+            canZoom = false;
+            // ZOOM
+            zoomProject();
+            setTimeout(function() {canZoom = true;}, 4000);
+        }
+        else {
+                canZoom = false;
+                // DEZOOM
+                dezoomProject();
+                setTimeout(function() {canZoom = true;}, 4000);
+             }
 
-      zoom = !zoom;
+        zoom = !zoom;
+      }
     });
 
     function displayProject(index)
@@ -776,6 +1020,22 @@
       {
         toogleCircle();
       }
+    });
+
+    // MODAL
+    $("body").on("hidden.bs.modal", ".modal", function () {
+        $(this).removeData("bs.modal");
+    });
+
+    $(".video button").click(function() {
+      var title = $(this).attr("title");
+      var video_name = $(this).attr("src");
+
+      $(".modal-title").html("Vidéo de "+title);
+      $("#mp4-video").attr("src", "videos/"+video_name+".mp4");
+      $("#ogv-video").attr("src", "videos/"+video_name+".ogv");
+      var video = $(".modal-body video");
+      video.load();
     });
 
   </script>
