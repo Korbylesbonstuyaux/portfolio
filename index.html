@@ -332,8 +332,12 @@
       <div class="container">
         <h1>Projets</h1>
         <div class="row">
-          <div id="content-project" class="bloc">
+          <div id="content-project">
             <img id="portable" src="images/backgrounds/portable.png" alt="Portable" />
+            <button id="left-arrow" class="arrow-btn prev" type="button" name="button">
+            </button>
+            <button id="right-arrow" class="arrow-btn next" type="button" name="button">
+            </button>
             <div id="projects-list">
               <div class="projects selected">
                 <div class="header-project">
@@ -694,14 +698,54 @@
               </div>
             </div>
           </div>
-          <div class="col-xs-12">
-            <button id="prev" type="button" name="button" class="btn-lg">Prev</button>
-            <button id="zoom" type="button" name="button" class="btn-lg">Zoom</button>
-            <button id="next" type="button" name="button" class="btn-lg">Next</button>
-          </div>
         </div>
       </div>
     </div>
+
+    <div id="experience">
+      <div class="container">
+        <h1>Experiences</h1>
+        <div id="exp1" class="exp">
+          <img src="images/photos/lirmm_1024_512.jpg" alt="Projet Portfolio">
+          <p>
+            <span class="title">Développeur Java</span>
+            <br>
+            <span class="formation">TER</span>
+            <br>
+            <span class="date">2013</span>
+          </p>
+        </div>
+        <div id="exp2" class="exp">
+          <img src="images/photos/groupama_1024_512.jpg" alt="Projet Portfolio">
+          <p>
+            <span class="title">Développeur Java</span>
+            <br>
+            <span class="formation">Stage</span>
+            <br>
+            <span class="date">2009</span>
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <div class="container">
+        <h1>Contact</h1>
+        <div class="row">
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            Site réalisé par Dross Pierre-Anthony<br><span class="showMin750"> | </span>Copyright© 2016 - Tous droits réservés
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <div class="modal fade" id="infos">
       <div class="modal-dialog">
@@ -756,224 +800,157 @@
 
   <script src="scripts/jquery-2.2.1.min.js"></script>
   <script src="scripts/bootstrap.js"></script>
+  <script src="scripts/menu_part.js"></script>
   <script src="scripts/skills_part.js"></script>
+  <script src="scripts/project_part.js"></script>
   <script type="text/javascript">
 
-    // MENU PART
-    $("#go-menu").click(function()
-    {
-      toogleMenu();
+    var canZoomExp = true;
+    var zoomExp = false;
+    var image_expH = 0;
+
+    // EXPERIENCE PART
+    $(".exp").click(function() {
+        toogleZoomExp(this.id);
     });
 
-    function toogleMenu()
+    function setSizeExp(multi)
     {
-      if($("#menu").css("display") == "none")
-      {
-        $("#menu").removeClass("hide-ele");
-        $("#menu").addClass("show-ele");
-      }
-      else {
-              $("#menu").removeClass("show-ele");
-              $("#menu").addClass("hide-ele");
-           }
-    }
-
-    var zoom = false;
-    var canZoom = true;
-    var change_project = false;
-    var content_projectH = 0;
-
-    function setContentProjectH()
-    {
-      var content_projectW = $("#content-project").css('width').split("px")[0];
-      content_projectH = (611 * content_projectW) / 934;
-      $("#content-project").css("height", "100%");
-    }
-
-    function zoomProject()
-    {
-      // Scale portable to 3.5
-      $("#portable").css("transform","scale(3.5)");
-      // $("#portable").delay(500).css("opacity","0");
-
-      // 100% size of selected project
-      $("#projects-list").css("width","100%");
-      $("#projects-list").css("height","100%");
-      $("#projects-list").css("top","0");
-      $("#projects-list").css("left","0");
-
-      // Up font size header project
-      setSizeProject(2);
-
-      $("#portable").delay(500).css("opacity", "0");
-
-      $(".projects.selected .header-project").css("height", "0px");
-
-      content_projectH = $("#content-project").prop('scrollHeight');
-      $("#content-project").css("height", content_projectH+"px");
-
-      // Show description
-      setTimeout(function()
-      {
-        var description_projectH = $(".projects.selected .description-project").prop('scrollHeight');
-        $(".projects.selected .description-project").css("height", "100%");
-
-        if(description_projectH > content_projectH)
-        {
-          $("#content-project").css("height", description_projectH+"px");
-        }
-      }, 1000);
-
-    }
-
-    function dezoomProject()
-    {
-      setContentProjectH();
-      $("#content-project").css("height", content_projectH+"px");
-
-      $(".projects.selected .description-project").css("height", "0");
-
-      setTimeout(function()
-      {
-        $("#portable").css("opacity", "1");
-        $(".projects.selected .header-project").css("height", "100%");
-      }, 2000);
-
-      setTimeout(function()
-      {
-        // Normal scale portable
-        $("#portable").css("transform","scale(1)");
-
-        // Normal size of selected project
-        $("#projects-list").css("width","62%");
-        $("#projects-list").css("height","60%");
-        $("#projects-list").css("top","5%");
-        $("#projects-list").css("left","18.6%");
-
-        setSizeProject(1);
-      }, 3500);
-
-    }
-
-    function setSizeProject(multi)
-    {
-      var title_fs = 2;
-      var date_fs = 1;
-      var date_num = 0.75;
+      var title_exp = 2;
+      var formation_exp = 1;
+      var date_exp = 1;
 
       if(windW < 1200)
       {
-        title_fs = 1.5; date_fs = 1; date_num = 0.75;
+        title_exp = 1.5; formation_exp = 1; date_exp = 1;
       }
 
       if(windW < 700)
       {
-        title_fs = 1; date_fs = 0.75; date_num = 0.5;
+        title_exp = 1.2; formation_exp = 0.8; date_exp = 0.8;
       }
 
       if(windW < 350)
       {
-        title_fs = 0.7; date_fs = 0.4; date_num = 0.4;
+        title_exp = 1; formation_exp = 0.6; date_exp = 0.6;
       }
 
-      $(".projects .title").css("font-size", (title_fs * multi)+"em");
-      $(".projects .date").css("font-size", (date_fs * multi)+"em");
-      $(".projects .num").css("font-size", (date_num * multi)+"em");
+      $(".exp .title").css("font-size", (title_exp * multi)+"em");
+      $(".exp .formation").css("font-size", (formation_exp * multi)+"em");
+      $(".exp .date").css("font-size", (date_exp * multi)+"em");
     }
 
-    // PROJECT PART
-    $("#zoom, .show-project").click(function()
+    function toogleZoomExp(id)
     {
-      if (canZoom)
+      if(canZoomExp)
       {
-        if(!zoom)
+        if (!zoomExp)
         {
-            canZoom = false;
-            // ZOOM
-            zoomProject();
-            setTimeout(function() {canZoom = true;}, 4000);
+          canZoomExp = false;
+          $(".exp:not(#"+id+")").each(function(index)
+          {
+
+            $("p", this).css("height", "0");
+          });
+
+          setTimeout(function() {
+
+            $(".exp").css("width", "0%");
+
+            if(windW < 600)
+            {
+                $("#"+id).css("width", "80%");
+            }
+            else $("#"+id).css("width", "60%");
+
+            $("#"+id+" p").css("height", "120px");
+            setSizeExp(1.5);
+
+            $(".exp:not(#"+id+")").each(function(index)
+            {
+                var ele = $(this);
+                var inter = setInterval(function(){
+                  displayNoneExp(ele, inter); }
+                  , 100 );
+            });
+          }, 1000);
+
+          setTimeout(function() {
+            image_expH = $("#"+id+" img").css("height");
+            $("#"+id+" img").css("height", image_expH);
+          }, 2600);
+
+
+          setTimeout(function() {
+            $("#"+id+" img").css("height", "0");
+          }, 3800);
+
         }
         else {
-                canZoom = false;
-                // DEZOOM
-                dezoomProject();
-                setTimeout(function() {canZoom = true;}, 4000);
+                canZoomExp = false;
+
+                $("#"+id+" img").css("height", image_expH);
+
+                setTimeout(function() {
+
+                  $("#"+id+" img").css("height", "100%");
+
+                  if(windW < 600)
+                  {
+                    $(".exp").css("width", "80%");
+                  }
+                  else $(".exp").css("width", "30%");
+
+
+
+                  setSizeExp(1);
+
+                  $("#"+id+" P").css("height", "80px");
+
+                  $(".exp:not(#"+id+")").each(function(index)
+                  {
+                      var ele = $(this);
+
+                      var inter = setInterval(function(){
+                        displayShowExp(ele, inter); }
+                        , 100 );
+                  });
+
+                  setTimeout(function() {
+                    $(".exp:not(#"+id+")").each(function(index)
+                    {
+                      $("p", this).css("height", "80px");
+                    });
+
+                  }, 2000);
+
+                }, 1010);
+
              }
 
-        zoom = !zoom;
-      }
-    });
+        setTimeout(function() { canZoomExp = true; }, 3000);
 
-    function displayProject(index)
-    {
-      $(".projects").fadeOut("slow");
-      // WARNING : NTH-CHILD Start to 1, no 0
-      $(".projects:nth-child("+index+") .num").html(index+"/"+$(".projects").length);
-      $(".projects:nth-child("+index+")").delay(600).fadeIn("slow");
-      setTimeout(function() {change_project = true; }, 800);
+        zoomExp = !zoomExp;
+      }
     }
 
-    function prevProject()
+    function displayShowExp(ele, interval)
     {
-      var index = -1;
-
-      if($(".projects.selected").prev().length)
+      if(ele.css("width").split("px")[0] > 0)
       {
-        var project = $(".projects.selected").prev();
-        $(".projects.selected").removeClass("selected");
-        project.addClass("selected");
-        index = $(".projects").index($(".projects.selected")) + 1;
+        ele.css("opacity", "1");
+        clearInterval(interval);
       }
-      else {
-              $(".projects.selected").removeClass("selected");
-              // Back to last project
-              index = $(".projects").length;
-              $(".projects:nth-child("+index+")").addClass("selected");
-           }
-
-      displayProject(index);
     }
 
-    function nextProject()
+    function displayNoneExp(ele, interval)
     {
-      var index = -1;
-
-      if($(".projects.selected").next().length)
+      if(ele.css("width").split("px")[0] <= 20)
       {
-        var project = $(".projects.selected").next();
-        $(".projects.selected").removeClass("selected");
-        project.addClass("selected");
-        index = $(".projects").index($(".projects.selected")) + 1;
+        ele.css("opacity", "0");
+        clearInterval(interval);
       }
-      else {
-              $(".projects.selected").removeClass("selected");
-              // Back to first project
-              index = 1;
-              $(".projects:nth-child("+index+")").addClass("selected");
-           }
-
-      displayProject(index);
     }
-
-    $("#next").click(function()
-    {
-      if(change_project)
-      {
-        change_project = false;
-        nextProject();
-      }
-    });
-
-    $("#prev").click(function()
-    {
-      if(change_project)
-      {
-        change_project = false;
-        prevProject();
-      }
-    });
-
-
 
     // Window width
     var windW = 0;
@@ -989,6 +966,10 @@
         setSizeProject(2);
       else setSizeProject(1);
 
+      if (zoomExp)
+        setSizeExp(2);
+      else setSizeExp(1);
+
       displaySkillsOnReady();
       initSkills();
       displayProject(1);
@@ -1001,6 +982,10 @@
       if (zoom)
         setSizeProject(2);
       else setSizeProject(1);
+
+      if (zoomExp)
+        setSizeExp(2);
+      else setSizeExp(1);
 
       setContentProjectH();
     });
@@ -1021,22 +1006,5 @@
         toogleCircle();
       }
     });
-
-    // MODAL
-    $("body").on("hidden.bs.modal", ".modal", function () {
-        $(this).removeData("bs.modal");
-    });
-
-    $(".video button").click(function() {
-      var title = $(this).attr("title");
-      var video_name = $(this).attr("src");
-
-      $(".modal-title").html("Vidéo de "+title);
-      $("#mp4-video").attr("src", "videos/"+video_name+".mp4");
-      $("#ogv-video").attr("src", "videos/"+video_name+".ogv");
-      var video = $(".modal-body video");
-      video.load();
-    });
-
   </script>
 </html>

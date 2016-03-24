@@ -386,6 +386,8 @@ else (deg > 180)
 
   transition: height 0.9s ease-in-out;
   background-color: white;
+
+  margin-bottom: 20px;
 }
 
 /* MEDIA QUERIES CONTENT PROJECT */
@@ -404,6 +406,50 @@ else (deg > 180)
   position: relative;
   display: inline-block;
 }
+
+.arrow-btn {
+  width: 8.5%;
+  height: 7.5%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent !important;
+  transition: all 0.01s ease-in-out;
+
+  position: absolute;
+  z-index: 0;
+}
+
+#left-arrow {
+  top: 88%;
+  left: 33.5%;
+  background: url("../images/backgrounds/left_arrow.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+#right-arrow {
+  top: 88%;
+  left: 55%;
+  background: url("../images/backgrounds/right_arrow.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.arrow-btn img {
+  width: 100%;
+  height: 100%;
+  background-color: transparent !important;
+}
+
+#left-arrow:hover {
+  background: url("../images/backgrounds/yellow_left_arrow.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+#right-arrow:hover {
+  background: url("../images/backgrounds/yellow_right_arrow.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+
 
 #projects-list {
   width: 62%;
@@ -610,10 +656,128 @@ else (deg > 180)
   height: auto;
   border: 5px solid #164C6E;
 }
-/*.bloc {
+
+/**** EXPERIENCE ****/
+
+#experience {
+  /*min-height: 470px;*/
+  background-color: #14BCC7;
+}
+
+#experience h1 {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+#experience .exp {
+  width: 30%;
+  margin: auto;
+  margin-bottom: 20px;
+  display: inline-block;
+
+  transition: width 2.0s ease-in-out, height 2.0s ease-in-out;
+  vertical-align: middle;
+
+  background-color: white;
+
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+#experience img {
+  width: 100%;
+  height: 100%;
+
+  transition: all 1.0s ease-in-out;
+}
+
+.exp p {
+  height: 80px;
+  overflow: hidden;
+  transition: all 2.0s ease-in-out;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.exp .title {
+  text-transform: uppercase;
+  color: #FFBD2B;
+  font-size: 2em;
+  transition: all 2.0s ease-in-out;
+}
+
+.exp .formation {
+  text-transform: uppercase;
+  color: #BCB3AB;
+  font-size: 1em;
+  transition: all 2.0s ease-in-out;
+}
+
+.exp .date {
+  color: #BCB3AB;
+  font-size: 1em;
+  transition: all 2.0s ease-in-out;
+}
+
+@media (max-width: 600px)
+{
+  #experience .exp {
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/**** CONTACT ****/
+
+#contact {
+  min-height: 470px;
+  background-color: white;
+}
+
+#contact h1 {
+  color: #14BCC7;
+  text-transform: uppercase;
+}
+
+/**** FOOTER ****/
+
+footer {
+  min-height: 117px;
+  background-color: #14BCC7;
+  font-size: 1.4em;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .showMin750 {
+  display: none;
+}
+
+@media (min-width: 750px)
+{
+  footer br {
+    display: none;
+  }
+
+  footer .showMin750 {
+    display: inline;
+  }
+}
+
+.bloc {
   border: 1px solid red;
 }
 
-.bloc1 {
-  border: 1px solid green;
-}*/
+.min {
+  min-height: 300px;
+}
