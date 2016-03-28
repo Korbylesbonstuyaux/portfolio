@@ -464,8 +464,6 @@ else (deg > 180)
   justify-content: center;
 }
 
-
-
 .projects {
   display: none;
 }
@@ -572,7 +570,6 @@ else (deg > 180)
   font-size: 0.5em;
   transition: all .4s ease-in-out;
 }
-
 
 .header-project {
   overflow: hidden;
@@ -684,19 +681,22 @@ else (deg > 180)
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
+
+  border: 5px solid #154D6E;
 }
 
-#experience img {
+#experience .img-exp {
   width: 100%;
   height: 100%;
 
   transition: all 1.0s ease-in-out;
 }
 
-.exp p {
+.exp .info {
   height: 80px;
   overflow: hidden;
   transition: all 2.0s ease-in-out;
+  background-color: white;
   margin: 0;
 
   display: flex;
@@ -723,6 +723,85 @@ else (deg > 180)
   font-size: 1em;
   transition: all 2.0s ease-in-out;
 }
+
+.exp button {
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.description-exp {
+  position: relative;
+  overflow: hidden;
+  height: 0px;
+  transition: all 2.0s ease-in-out;
+  background-color: white;
+  /*width: 100%;*/
+}
+
+#experience .info {
+  position: relative;
+}
+
+#experience .btn-close {
+  opacity: 1;
+  transition: all 2.0s ease-in-out;
+  display: none;
+}
+
+#experience .btn-close button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 10px;
+  right: 10px;
+  border: 2px solid #F15D2F;
+  color: #F15D2F;
+  border-radius: 50%;
+  font-size: 2em;
+
+  background-color: transparent;
+}
+
+#experience .btn-close button:hover {
+  background-color: #F15D2F !important;
+  color: white;
+}
+
+
+.description-exp h2 {
+  font-size: 2em;
+  color: #FFBD2B;
+  /*color: #164C6E;*/
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.description-exp h3 {
+  color: #164C6E;
+}
+
+.duration, .place {
+  display: inline-block;
+  width: 49%;
+}
+
+.duration, .place, .resume, .creator, .tutor {
+  font-size: 1.4em;
+  color: #7C8081;
+}
+
+.resume .thank {
+  font-size: 0.9em !important;
+  font-style: italic;
+}
+
+.tutor {
+  margin-bottom: 10px;
+}
+
 
 @media (max-width: 600px)
 {
