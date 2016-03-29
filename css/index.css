@@ -12,7 +12,6 @@ nav {
   height: 50px;
 }
 
-
 #go-menu {
   height: 50px;
   width: 50px;
@@ -52,9 +51,12 @@ nav {
   width: 100vw;
   height: calc(100vh - 50px);
   /*background-color: red;*/
+  background-color: rgba(20, 188, 199, 0.5);
   position: fixed;
   top: 50px;
+  /*padding-top: 50px;*/
 }
+
 
 .hide-ele {
   display: none;
@@ -67,13 +69,34 @@ nav {
 #menu .bloc-menu {
   width: calc(100% / 3);
   height: calc(100% / 2);
-  /*background-color: yellow;*/
+  /*background-color: rgba(20, 188, 199, 0.5);*/
   display: inline-block;
 }
 
-#menu .bloc-menu:hover {
-  background-color: blue;
+#menu .selected-section {
+  background-color: red;
 }
+
+#menu .bloc-menu div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #154D6E;
+}
+
+#menu .bloc-menu a, #menu .bloc-menu a:hover, #menu .bloc-menu a:active, #menu .bloc-menu a:focus {
+  color: none;
+  text-decoration: none;
+  outline: none;
+}
+
+#menu .bloc-menu:hover {
+  /*background-color: blue;*/
+}
+
 
 @media (max-width: 600px) {
   #menu .bloc-menu {
@@ -786,6 +809,7 @@ else (deg > 180)
 .duration, .place {
   display: inline-block;
   width: 49%;
+  vertical-align: top;
 }
 
 .duration, .place, .resume, .creator, .tutor {
@@ -799,7 +823,7 @@ else (deg > 180)
 }
 
 .tutor {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 
@@ -823,6 +847,192 @@ else (deg > 180)
 #contact h1 {
   color: #14BCC7;
   text-transform: uppercase;
+}
+
+#contact h2 {
+  color: #FFBD2B;
+}
+
+#contact h3 {
+  font-size: 1.4em;
+  color: #154D6E;
+}
+
+.contact-bloc {
+  width: 49%;
+  display: inline-block;
+
+  margin-bottom: 20px;
+  vertical-align: top;
+}
+
+#follow-content, #contact-content {
+
+  min-height: 650px;
+  margin-top: 25px;
+
+  font-size: 1.4em;
+}
+
+#curriculum-vitae button {
+  display: block;
+  margin: auto;
+  background-color: #14BCC7;
+  color: white;
+  margin-top: 20px;
+}
+
+#download:focus, #download:hover {
+  text-decoration: none;
+  outline: none;
+  color: #FFBD2B;
+}
+
+#curriculum-vitae a:hover, #curriculum-vitae a:focus, #curriculum-vitae a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+#social-network {
+  margin-top: 100px;
+}
+
+#social-network .fa-circle {
+  color: #14BCC7;
+}
+
+#social-network .fa-stack:hover .fa-twitter,  #social-network .fa-stack:hover .fa-linkedin {
+  color: #FFBD2B;
+}
+
+/* CONTACT FORM */
+
+#contact-content form {
+  width: 80%;
+  margin: auto;
+}
+
+#contact-content form div {
+  text-align: left;
+}
+
+#contact-content p {
+  padding-top: 25px;
+}
+
+#contact-content textarea {
+  resize: none;
+  height: 100px;
+}
+
+#contact-content button {
+  background-color: #14BCC7;
+  color: white;
+}
+
+#contact-content label {
+  color: #154D6E !important;
+  font-weight: normal !important;
+}
+
+#contact-content .required {
+  color: #F15D2F !important;
+}
+
+.name-error, .name-feedback, .firstname-error, .firstname-feedback {
+  display: none;
+  text-align: center;
+}
+
+.email-error, .email-feedback, .subject-error, .subject-feedback, .message-error, .message-feedback, .form-error {
+  display: none;
+  text-align: center;
+}
+
+.captcha-error, .captcha-feedback {
+  display: none;
+  text-align: center;
+}
+
+#image-captcha {
+  margin-left: 10px;
+}
+
+#refresh-captcha {
+  margin-left: 5px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+}
+
+#refresh-captcha:focus, #refresh-captcha:hover {
+  text-decoration: none;
+  outline: none;
+  color: #FFBD2B;
+}
+
+#refresh-captcha span {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+}
+
+.feedback {
+  display: inline;
+}
+
+.error {
+  display: block;
+  color: #F15D2F !important;
+}
+
+.glyphicon-envelope {
+  margin-top: 40px;
+  font-size: 5em;
+}
+
+.green {
+  color: #009E93;
+}
+
+.red  {
+  color: #F15D2F;
+}
+
+#submit:focus, #reload-form:focus {
+  color: white;
+  text-decoration: none;
+  outline: none;
+}
+
+#submit:hover {
+  color: #FFBD2B;
+}
+
+
+#letter, #cv {
+   width: 30%;
+   height: auto;
+}
+
+@media (max-width: 650px)
+{
+  .contact-bloc {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  #follow-content, #contact-content {
+    min-height: 0px;
+  }
+
+  #social-network {
+    margin-top: 20px;
+  }
 }
 
 /**** FOOTER ****/

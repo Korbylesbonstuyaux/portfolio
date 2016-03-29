@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
   </head>
 
   <body data-spy="scroll" data-target=".navbar">
@@ -864,7 +865,7 @@
               </div>
             </div>
             <div class="creator">
-              <h3>Créateurs</h3>
+              <h3>Créateur</h3>
               DROSS Pierre-Anthony
             </div>
             <div class="tutor">
@@ -881,7 +882,112 @@
     <div id="contact">
       <div class="container">
         <h1>Contact</h1>
-        <div class="row">
+        <div class="contact-bloc">
+          <h2>Par téléphone en récupérant mon C.V :</h2>
+          <div id="follow-content">
+            <div id="curriculum-vitae">
+              <h3>Curriculum Vitae</h3>
+              <img id="cv" src="images/icons/cv_grey.png" alt="Curriculum Vitae"/>
+              <a download="CV_Dross_Pierre-Anthony.pdf" href="documents/CV_Dross_Pierre-Anthony.pdf">
+                <button id="download" type="button" class="btn btn-lg" autocomplete="off">Télécharger</button>
+              </a>
+            </div>
+            <div id="social-network">
+              <h3>Suivez-moi !</h3>
+                <span class="fa-stack fa-2x">
+                  <a target="_blank" href="https://twitter.com/PA_Dross">
+                    <span class="fa fa-circle fa-stack-2x"></span>
+                    <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                  </a>
+                </span>
+                <span class="fa-stack fa-2x">
+                  <a target="_blank" href="https://fr.linkedin.com/in/pierreanthonydross">
+                    <span class="fa fa-circle fa-stack-2x"></span>
+                    <span class="fa fa-linkedin fa-stack-1x fa-inverse"></span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-bloc">
+          <h2>Par message depuis ce formulaire :</h2>
+          <div id="contact-content">
+            <form id="contact-form" class="contact-form" action="ajax/contact.php" method="post">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group has-feedback name-form">
+                    <label class="control-label" for="name">Nom <span class="required">*</span> : </label>
+                    <input id="name" name="name" type="text" class="form-control" maxlength="40">
+                    <span class="glyphicon glyphicon-remove form-control-feedback name-feedback"></span>
+                    <p class="name-error">
+                      Votre nom ne correspond pas aux critères.
+                      <br> Entre 2 et 40 lettres.
+                    </p>
+                  </div>
+                  <div class="form-group has-feedback firstname-form">
+                    <label class="control-label" for="firstname">Prénom <span class="required">*</span> : </label>
+                    <input id="firstname" name="firstname" type="text" class="form-control" maxlength="40">
+                    <span class="glyphicon glyphicon-remove form-control-feedback firstname-feedback"></span>
+                    <p class="firstname-error">
+                      Votre prénom ne correspond pas aux critères.
+                      <br> Entre 2 et 40 lettres.
+                    </p>
+                  </div>
+                  <div class="form-group has-feedback email-form">
+                    <label class="control-label" for="email">Email <span class="required">*</span> : </label>
+                    <input id="email" name="email" type="email" class="form-control" maxlength="60">
+                    <span class="glyphicon glyphicon-remove form-control-feedback email-feedback"></span>
+                    <p class="email-error">
+                      L'adresse email n'est pas au bon format.
+                    </p>
+                  </div>
+                  <div class="form-group has-feedback subject-form">
+                    <label class="control-label" for="subject">Titre <span class="required">*</span> : </label>
+                    <input id="subject" name="subject" type="text" class="form-control" maxlength="60">
+                    <span class="glyphicon glyphicon-remove form-control-feedback subject-feedback"></span>
+                    <p class="subject-error">
+                      Le sujet ne correspond pas aux critères.
+                      <br> Entre 6 et 60 lettres.
+                    </p>
+                  </div>
+                  <div class="form-group has-feedback message-form">
+                    <label class="control-label" for="message">Message <span class="required">*</span> : </label>
+                    <textarea id="message" name="message" type="textarea" class="form-control" maxlength="360"></textarea>
+                    <span class="glyphicon glyphicon-remove form-control-feedback message-feedback"></span>
+                    <p class="message-error">
+                      Votre message ne correspond pas aux critères.
+                      <br> Entre 20 et 360 caractères.
+                    </p>
+                  </div>
+                  <div class="form-group has-feedback captcha-form">
+                    <label class="control-label" for="captcha">Captcha <span class="required">*</span> : </label>
+                    <img id="image-captcha" src="php/captcha.php?param=0" alt="captcha" class="captcha"/>
+                    <button id="refresh-captcha" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-refresh"></span></button>
+                    <input id="captcha" name="captcha" type="text" class="form-control" maxlength="5">
+                    <span class="glyphicon glyphicon-remove form-control-feedback captcha-feedback"></span>
+                    <p class="captcha-error">
+                      Votre réponse ne correspond pas au captcha affiché.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button id="submit" type="submit" class="btn btn-lg pull-right" autocomplete="off">Envoyer</button>
+                    </div>
+                    <div class="col-xs-12">
+                      <p class="form-error">
+                        Un champ (ou plusieurs) n'est pas correct.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <span class="pull-left required">* : Champ obligatoire</span>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -915,34 +1021,46 @@
 
     <div id="menu" class="hide-ele">
       <div id="go-home" class="bloc-menu">
-        <p>
-          Go Home
-        </p>
+        <a href="#home">
+          <div>
+            Accueil
+          </div>
+        </a>
       </div><!--
    --><div id="go-about" class="bloc-menu">
-        <p>
-          Go About
-        </p>
+       <a href="#about">
+          <div>
+            Qui suis-je ?
+          </div>
+        </a>
       </div><!--
    --><div id="go-skill" class="bloc-menu">
-        <p>
-          Go Skill
-        </p>
+        <a href="#skill">
+          <div>
+            Compétences
+          </div>
+        </a>
       </div><!--
    --><div id="go-project" class="bloc-menu">
-        <p>
-          Go Project
-        </p>
+        <a href="#project">
+          <div>
+            Projets
+          </div>
+        </a>
       </div><!--
    --><div id="go-experience" class="bloc-menu">
-        <p>
-          Go Experience
-        </p>
+       <a href="#experience">
+          <div>
+            Experiences
+          </div>
+        </a>
       </div><!--
    --><div id="go-contact" class="bloc-menu">
-        <p>
-          Go Contact
-        </p>
+        <a href="#contact">
+          <div>
+            Contact
+          </div>
+        </a>
       </div>
     </div>
   </body>
@@ -952,178 +1070,35 @@
   <script src="scripts/menu_part.js"></script>
   <script src="scripts/skills_part.js"></script>
   <script src="scripts/project_part.js"></script>
+  <script src="scripts/experience_part.js"></script>
+  <script src="scripts/contact_part.js"></script>
   <script type="text/javascript">
-
-    var canZoomExp = true;
-    var zoomExp = false;
-    var image_expH = 0;
-
-    // EXPERIENCE PART
-    $(".exp button").click(function() {
-        var id = $(this).attr("data-id");
-        // toogleZoomExp(this.id);
-        toogleZoomExp(id);
-    });
-
-    function setSizeExp(multi)
-    {
-      var title_exp = 2;
-      var formation_exp = 1;
-      var date_exp = 1;
-
-      if(windW < 1200)
-      {
-        title_exp = 1.5; formation_exp = 1; date_exp = 1;
-      }
-
-      if(windW < 700)
-      {
-        title_exp = 1.2; formation_exp = 0.8; date_exp = 0.8;
-      }
-
-      if(windW < 350)
-      {
-        title_exp = 1; formation_exp = 0.6; date_exp = 0.6;
-      }
-
-      $(".exp .title").css("font-size", (title_exp * multi)+"em");
-      $(".exp .formation").css("font-size", (formation_exp * multi)+"em");
-      $(".exp .date").css("font-size", (date_exp * multi)+"em");
-    }
-
-    function toogleZoomExp(id)
-    {
-      if(canZoomExp)
-      {
-        if (!zoomExp)
-        {
-          canZoomExp = false;
-          $(".exp:not(#"+id+")").each(function(index)
-          {
-
-            $(".info", this).css("height", "0");
-          });
-
-          setTimeout(function() {
-
-            $(".exp").css("width", "0%");
-
-            if(windW < 600)
-            {
-                $("#"+id).css("width", "80%");
-            }
-            else $("#"+id).css("width", "60%");
-
-            $("#"+id+" .info").css("height", "120px");
-            setSizeExp(1.5);
-
-            $(".exp:not(#"+id+")").each(function(index)
-            {
-                var ele = $(this);
-                var inter = setInterval(function(){
-                  displayNoneExp(ele, inter); }
-                  , 100 );
-            });
-          }, 1000);
-
-          setTimeout(function() {
-            image_expH = $("#"+id+" .img-exp").css("height");
-            $("#"+id+" .img-exp").css("height", image_expH);
-          }, 2600);
-
-
-          setTimeout(function() {
-            $("#"+id+" .img-exp").css("height", "0");
-          }, 3800);
-
-          setTimeout(function() {
-            var description_expH = $("#"+id+" .description-exp").prop('scrollHeight');
-            $("#"+id+" .description-exp").css("height", description_expH+"px");
-            $("#"+id+" .btn-close").fadeIn(500, "linear");
-          }, 4500);
-
-        }
-        else {
-                canZoomExp = false;
-
-                $("#"+id+" .btn-close").fadeOut(500, "linear");
-                $("#"+id+" .description-exp").css("height", "0px");
-
-                setTimeout(function() {
-                  $("#"+id+" .img-exp").css("height", image_expH);
-                }, 2100);
-
-
-                setTimeout(function() {
-
-                  $("#"+id+" .img-exp").css("height", "100%");
-
-                  if(windW < 600)
-                  {
-                    $(".exp").css("width", "80%");
-                  }
-                  else $(".exp").css("width", "30%");
-
-
-
-                  setSizeExp(1);
-
-                  $("#"+id+" .info").css("height", "80px");
-
-                  $(".exp:not(#"+id+")").each(function(index)
-                  {
-                      var ele = $(this);
-
-                      var inter = setInterval(function(){
-                        displayShowExp(ele, inter); }
-                        , 100 );
-                  });
-
-                  setTimeout(function() {
-                    $(".exp:not(#"+id+")").each(function(index)
-                    {
-                      $(".info", this).css("height", "80px");
-                    });
-
-                  }, 4000);
-
-                }, 3100);
-
-             }
-
-        setTimeout(function() { canZoomExp = true; }, 3000);
-
-        zoomExp = !zoomExp;
-      }
-    }
-
-    function displayShowExp(ele, interval)
-    {
-      if(ele.css("width").split("px")[0] > 0)
-      {
-        ele.css("opacity", "1");
-        clearInterval(interval);
-      }
-    }
-
-    function displayNoneExp(ele, interval)
-    {
-      if(ele.css("width").split("px")[0] <= 20)
-      {
-        ele.css("opacity", "0");
-        clearInterval(interval);
-      }
-    }
 
     // Window width
     var windW = 0;
     // Window heigth
     var windH = 0;
 
+    // Parts top
+    var home_part = 0;
+    var about_part = 0;
+    var skill_part = 0;
+    var project_part = 0;
+    var experience_part = 0;
+    var contact_part = 0;
+
+
     // DOCUMENT READY
     $(document).ready(function() {
       windW = $(window).width();
       windH = $(window).height();
+
+      home_part =  $("#home").scrollTop();
+      about_part =  $("#about").scrollTop();
+      skill_part =  $("#skill").scrollTop();
+      project_part =  $("#project").scrollTop();
+      experience_part =  $("#experience").scrollTop();
+      contact_part =  $("#contact").scrollTop();
 
       if (zoom)
         setSizeProject(2);
@@ -1138,7 +1113,7 @@
       displayProject(1);
     });
 
-    $( window ).resize(function() {
+    $(window).resize(function() {
       windW = $(window).width();
       windH = $(window).height();
 
