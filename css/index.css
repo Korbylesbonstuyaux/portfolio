@@ -12,7 +12,7 @@ nav {
   height: 50px;
 }
 
-#go-menu {
+/*#go-menu {
   height: 50px;
   width: 50px;
   line-height: 50px !important;
@@ -20,6 +20,17 @@ nav {
   position: relative;
   background: none !important;
   margin-right: 10px;
+}*/
+
+#go-menu {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  right: 5%;
+  z-index: 2;
+  border: 0;
+  background-color: transparent;
 }
 
 #go-menu:focus, #go-menu:active {
@@ -28,11 +39,18 @@ nav {
   box-shadow: none;
 }
 
-#go-menu div {
-  line-height: normal;
-  position: absolute;
-  top: -25px;
-  left: -5px;
+#go-menu .symbol {
+  width: 100%;
+  height: 100%;
+  margin-top: 12px;
+}
+
+#go-menu .symbol .rectangle {
+  margin: auto;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 5px;
+  background-color: #FFBD2B;
 }
 
 #go-menu span {
@@ -50,11 +68,9 @@ nav {
 #menu {
   width: 100vw;
   height: calc(100vh - 50px);
-  /*background-color: red;*/
   background-color: rgba(20, 188, 199, 0.5);
   position: fixed;
   top: 50px;
-  /*padding-top: 50px;*/
 }
 
 
@@ -69,15 +85,33 @@ nav {
 #menu .bloc-menu {
   width: calc(100% / 3);
   height: calc(100% / 2);
-  /*background-color: rgba(20, 188, 199, 0.5);*/
   display: inline-block;
+
+  text-align: center;
 }
 
-#menu .selected-section {
-  background-color: red;
+#menu .bloc-menu h1 {
+  text-transform: uppercase;
 }
 
-#menu .bloc-menu div {
+#menu .bloc-menu span {
+  text-align: center;
+  margin: auto;
+}
+
+#menu .bloc-menu:hover {
+  background-color: rgba(21, 77, 110, 0.5);
+}
+
+#menu .bloc-menu:hover h1, #menu .bloc-menu:hover span {
+  color: white;
+}
+
+#menu .bloc-menu.selected-section {
+  background-color: rgba(255, 189, 43, 0.5);
+}
+
+#menu .bloc-menu .center-menu {
   width: 100%;
   height: 100%;
   display: flex;
@@ -97,11 +131,28 @@ nav {
   /*background-color: blue;*/
 }
 
+@media (max-width: 900px) {
+
+  #menu .bloc-menu h1 {
+    font-size: 2em;
+  }
+}
 
 @media (max-width: 600px) {
   #menu .bloc-menu {
     width: calc(100% / 2);
     height: calc(100% / 3);
+  }
+
+  #menu .bloc-menu h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 400px) {
+
+  #menu .bloc-menu h1 {
+    font-size: 1.25em;
   }
 }
 

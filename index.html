@@ -15,15 +15,16 @@
 
   <body data-spy="scroll" data-target=".navbar">
     <header>
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <button id="go-menu" type="button" class="btn btn-lg pull-right">
-          <div>
-            <span class="glyphicon glyphicon-minus"></span>
-            <span class="glyphicon glyphicon-minus"></span>
-            <span class="glyphicon glyphicon-minus"></span>
+        <button id="go-menu" type="button">
+          <div class="symbol">
+            <div class="rectangle">
+            </div>
+            <div class="rectangle">
+            </div>
+            <div class="rectangle">
+            </div>
           </div>
         </button>
-      </nav>
     </header>
 
     <div id="home">
@@ -705,7 +706,7 @@
 
     <div id="experience">
       <div class="container">
-        <h1>Experiences</h1>
+        <h1>Expériences</h1>
         <div id="exp1" class="exp">
           <button data-id="exp1" class="show-exp" type="button" name="button">
             <img src="images/photos/lirmm_1024_512.jpg" alt="Projet Portfolio" class="img-exp">
@@ -1020,45 +1021,63 @@
     </div>
 
     <div id="menu" class="hide-ele">
-      <div id="go-home" class="bloc-menu">
+      <div id="go-home" class="bloc-menu selected-section">
         <a href="#home">
-          <div>
-            Accueil
+          <div class="center-menu">
+            <div>
+              <h1>Accueil</h1>
+              <span class="fa fa-home fa-4x"></span>
+            </div>
           </div>
         </a>
       </div><!--
    --><div id="go-about" class="bloc-menu">
        <a href="#about">
-          <div>
-            Qui suis-je ?
-          </div>
+         <div class="center-menu">
+           <div>
+             <h1>Qui suis-je ?</h1>
+             <span class="fa fa-user fa-4x"></span>
+           </div>
+         </div>
         </a>
       </div><!--
    --><div id="go-skill" class="bloc-menu">
         <a href="#skill">
-          <div>
-            Compétences
+          <div class="center-menu">
+            <div>
+              <h1>Compétences</h1>
+              <span class="fa fa-check fa-4x"></span>
+            </div>
           </div>
         </a>
       </div><!--
    --><div id="go-project" class="bloc-menu">
         <a href="#project">
-          <div>
-            Projets
+          <div class="center-menu">
+            <div>
+              <h1>Projets</h1>
+              <span class="fa fa-cogs fa-4x"></span>
+            </div>
           </div>
         </a>
       </div><!--
    --><div id="go-experience" class="bloc-menu">
        <a href="#experience">
-          <div>
-            Experiences
-          </div>
+         <div class="center-menu">
+           <div>
+             <h1>Expériences</h1>
+             <span class="fa fa-level-up fa-4x"></span>
+           </div>
+         </div>
         </a>
       </div><!--
    --><div id="go-contact" class="bloc-menu">
         <a href="#contact">
-          <div>
-            Contact
+          <div class="center-menu">
+            <div>
+              <h1>Contact</h1>
+              <span class="fa fa-envelope fa-4x"></span>
+            </div>
           </div>
         </a>
       </div>
@@ -1079,53 +1098,47 @@
     // Window heigth
     var windH = 0;
 
-    // Parts top
-    var home_part = 0;
-    var about_part = 0;
-    var skill_part = 0;
-    var project_part = 0;
-    var experience_part = 0;
-    var contact_part = 0;
-
-
     // DOCUMENT READY
     $(document).ready(function() {
       windW = $(window).width();
       windH = $(window).height();
 
-      home_part =  $("#home").scrollTop();
-      about_part =  $("#about").scrollTop();
-      skill_part =  $("#skill").scrollTop();
-      project_part =  $("#project").scrollTop();
-      experience_part =  $("#experience").scrollTop();
-      contact_part =  $("#contact").scrollTop();
+      // Menu
+      initPartTop();
+      setInterval(updatePartTop, 100 );
+      setInterval(updateCurrentSection, 100 );
 
+      // Skill
+      displaySkillsOnReady();
+      initSkills();
+      displayProject(1);
+
+      // Project
       if (zoom)
         setSizeProject(2);
       else setSizeProject(1);
 
+      // Experience
       if (zoomExp)
         setSizeExp(2);
       else setSizeExp(1);
-
-      displaySkillsOnReady();
-      initSkills();
-      displayProject(1);
     });
 
     $(window).resize(function() {
       windW = $(window).width();
       windH = $(window).height();
 
+      // Project
       if (zoom)
         setSizeProject(2);
       else setSizeProject(1);
 
+      setContentProjectH();
+
+      // Experience
       if (zoomExp)
         setSizeExp(2);
       else setSizeExp(1);
-
-      setContentProjectH();
     });
 
     // WINDOW SCROLL
