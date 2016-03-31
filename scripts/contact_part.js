@@ -415,3 +415,54 @@ function isValidCaptcha(captcha)
   }
 
 }) ();
+
+function doCrypt(isDecrypt, text, key_value)
+{
+	var result = "";
+
+	if (!/^-?\d+$/.test(key_value))
+	{
+		return null;
+	}
+
+	var key = parseInt(key_value, 10);
+
+	if (key < 0 || key >= 26)
+	{
+		return null;
+	}
+
+	if (isDecrypt)
+	{
+		key = (26 - key) % 26;
+	}
+
+	for (var i = 0; i < text.length; i++)
+	{
+		var c = text.charCodeAt(i);
+
+		if(c >= 65 && c <= 90)
+		{
+			 result += String.fromCharCode((c - 65 + key) % 26 + 65);  // Uppercase
+		}
+		else {
+					 if(c >= 97 && c <= 122)
+					 {
+						 result += String.fromCharCode((c - 97 + key) % 26 + 97);  // Lowercase
+					 }
+					 else result += text.charAt(i);  // Copy
+				 }
+	}
+
+	return result;
+}
+
+var decrypted = false;
+
+$("#contact #decrypt").click(function()
+{
+	if(!decrypted)
+	{
+			$("#contact .my-email").html(doCrypt(true, "wplyylhuaovuf.kyvzz@nthps.jvt", 7));
+	}
+});

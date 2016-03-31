@@ -64,7 +64,7 @@ function sendMessage($name, $firstname, $title, $email, $mess)
 	$to  = CONTACT_MAIL;
 
 	// Subject
-	$subject = 'Site UPTO Numérique : nouveau message.';
+	$subject = 'Mon portfolio : nouveau message.';
 
 	// Message
 	$message = '
@@ -73,7 +73,7 @@ function sendMessage($name, $firstname, $title, $email, $mess)
 	  <title>Nouveau Message</title>
 	</head>
 	<body>
-		<p>Vous avez reçu un nouveau message depuis le formulaire du site UP TO Numérique</p>
+		<p>Vous avez reçu un nouveau message depuis le formulaire de mon portfolio</p>
 	  <p>
 			<b>Nom</b> : '.$name.' <br>
 			<b>Prénom</b> : '.$firstname.' <br>
@@ -107,7 +107,7 @@ function sendConfirmationMail($name, $firstname, $email)
 	$to  = $email;
 
 	// Subject
-	$subject = 'Site UPTO Numérique : confirmation de votre message.';
+	$subject = 'Portfolio Dross Pierre-Anthony : confirmation de votre message.';
 
 	// message
 	$message = '
@@ -133,7 +133,7 @@ function sendConfirmationMail($name, $firstname, $email)
 
 	// Additional headers
 	// $headers .= 'To: contact <'.$email.'>' . "\r\n";
-	$headers .= 'From: Site UPTO Numérique <'.CONTACT_MAIL.'>' . "\r\n";
+	$headers .= 'From: Portfolio Dross Pierre-Anthony <'.CONTACT_MAIL.'>' . "\r\n";
 
 	// Send mail
 	mail($to, $subject, $message, $headers);

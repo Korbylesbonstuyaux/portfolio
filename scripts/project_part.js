@@ -218,6 +218,7 @@ $(".video button").click(function() {
   $(".modal-title").html("Vidéo de "+title);
   $("#mp4-video").attr("src", "videos/"+video_name+".mp4");
   $("#ogv-video").attr("src", "videos/"+video_name+".ogv");
+  $("#webm-video").attr("src", "videos/"+video_name+".webm");
   var video = $(".modal-body video");
   video.load();
 });

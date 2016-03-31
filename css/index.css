@@ -765,6 +765,20 @@ else (deg > 180)
 
   transition: all 1.0s ease-in-out;
 }
+.exp button {
+  position: relative;
+}
+
+.exp .more-exp {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.exp .more-exp .fa {
+  color: #F15D2F;
+  font-size: 3em;
+}
 
 .exp .info {
   height: 80px;
@@ -886,6 +900,10 @@ else (deg > 180)
     margin: auto;
     margin-bottom: 10px;
   }
+
+  .exp .more-exp .fa {
+    font-size: 2.5em;
+  }
 }
 
 /**** CONTACT ****/
@@ -893,6 +911,7 @@ else (deg > 180)
 #contact {
   min-height: 470px;
   background-color: white;
+  color: #7C8081;
 }
 
 #contact h1 {
@@ -918,7 +937,6 @@ else (deg > 180)
 }
 
 #follow-content, #contact-content {
-
   min-height: 650px;
   margin-top: 25px;
 
@@ -931,6 +949,7 @@ else (deg > 180)
   background-color: #14BCC7;
   color: white;
   margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 #download:focus, #download:hover {
@@ -944,8 +963,14 @@ else (deg > 180)
   outline: none;
 }
 
+#curriculum-vitae .warning-email {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #F15D2F;
+}
+
 #social-network {
-  margin-top: 100px;
+  /*margin-top: 100px;*/
 }
 
 #social-network .fa-circle {
@@ -957,6 +982,12 @@ else (deg > 180)
 }
 
 /* CONTACT FORM */
+
+#contact-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 #contact-content form {
   width: 80%;

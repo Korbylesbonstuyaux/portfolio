@@ -44,9 +44,11 @@ function toogleZoomExp(id)
     if (!zoomExp)
     {
       canZoomExp = false;
+
+      $(".exp .more-exp").fadeOut("slow");
+
       $(".exp:not(#"+id+")").each(function(index)
       {
-
         $(".info", this).css("height", "0");
       });
 
@@ -110,8 +112,6 @@ function toogleZoomExp(id)
               }
               else $(".exp").css("width", "30%");
 
-
-
               setSizeExp(1);
 
               $("#"+id+" .info").css("height", "80px");
@@ -126,12 +126,15 @@ function toogleZoomExp(id)
               });
 
               setTimeout(function() {
+
+                $(".exp .more-exp").fadeIn("slow");
+
                 $(".exp:not(#"+id+")").each(function(index)
                 {
                   $(".info", this).css("height", "80px");
                 });
 
-              }, 4000);
+              }, 3800);
 
             }, 3100);
 
